@@ -1,0 +1,13 @@
+before_script:
+  - npm -v
+
+build:
+  stage: build
+  script:
+    - npm install
+    - npm run build
+    - rm -rf /root/html/kd
+    - mkdir -p /root/html/kd
+    - cp -r dist/* /root/html/kd/
+  tags:
+    - kd
