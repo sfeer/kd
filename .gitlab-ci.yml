@@ -10,4 +10,4 @@ build:
     - mkdir -p /root/html/kd
     - cp -r dist/* /root/html/kd/
   tags:
-    - docker
+    - kd
