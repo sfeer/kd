@@ -1,15 +1,6 @@
-import { createRouter, createWebHistory } from 'vue-router'
+import {createRouter, createWebHistory} from 'vue-router'
 
-const routes = [
-  {
-    path: '/site/design/:sid',
-    component: () => import('../views/page/XDesign')
-  },
-]
-
-const router = createRouter({
+export default createRouter({
   history: createWebHistory(process.env.BASE_URL),
-  routes
+  routes: [{path: '/', component: () => import('../views/Home')}]
 })
-
-export default router

@@ -1,10 +1,15 @@
-import { createApp } from 'vue'
+import {createApp} from 'vue'
 import App from './App'
 import router from './router'
-import {VueAxios} from './utils/request'
-import './core'
+import antdv from '@/core/antdv'
+import page from '@/core/page'
 
-createApp(App)
+// 主样式
+import '@/assets/main.less'
+
+const app = createApp(App)
 .use(router)
-.use(VueAxios)
-.mount('#app')
+.use(antdv)
+.use(page)
+
+app.mount('#app')

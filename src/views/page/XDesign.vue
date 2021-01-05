@@ -7,15 +7,14 @@
 </template>
 
 <script>
-import XBox from '@/components/Box/XBox'
-import {} from '@/api/page'
+import XBox from '@/components/XBox'
 
 export default {
   name: 'XDesign',
 
   data() {
     return {
-
+      tree: []
     }
   },
 

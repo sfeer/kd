@@ -1,5 +1,5 @@
-import {axios} from '@/utils/request'
+import axios from '@/core/axios'
 
-export function getPage(id) {
-  return axios.get('')
+export function getPage(pageid) {
+  return axios.get('/page/get', {params: {pageid}})
 }
