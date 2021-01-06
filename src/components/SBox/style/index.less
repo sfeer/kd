@@ -10,7 +10,7 @@
     border-radius: 10px;
     color: white;
 
-    .n, .s, .w, .e, .wn, .en, .ws, .es {
+    .n, .s, .w, .e {
       position: absolute;
       cursor: pointer;
     }
@@ -32,12 +32,37 @@
       }
     }
 
+    .w,.e {
+      top: 50%;
+      margin-top: -40px;
+      width: 40px;
+      height: 80px;
+      &:before{
+        position: absolute;
+        content: '';
+        background-color: white;
+        top: 10px;
+        left: 18px;
+        width: 4px;
+        height: 60px;
+        border-radius: 2px;
+      }
+    }
+
     .n {
       top: -20px;
     }
 
     .s {
       bottom: -20px;
+    }
+
+    .w {
+      left: -20px;
+    }
+
+    .e {
+      right: -20px;
     }
   }
 }
