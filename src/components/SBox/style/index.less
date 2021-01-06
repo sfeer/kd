@@ -1,12 +1,44 @@
 @import "../../../assets/theme";
 
-.t-box-wrapper {
+.s-box-wrapper {
   position: relative;
 
   .box {
+    background-color: rgba(0, 0, 0, .5);
+    padding: 12px;
     position: absolute;
-    border-radius: 4px;
-    border: 1px solid @border-color-base;
+    border-radius: 10px;
+    color: white;
+
+    .n, .s, .w, .e, .wn, .en, .ws, .es {
+      position: absolute;
+      cursor: pointer;
+    }
+
+    .n,.s {
+      left: 50%;
+      margin-left: -40px;
+      width: 80px;
+      height: 40px;
+      &:before{
+        position: absolute;
+        content: '';
+        background-color: white;
+        top: 18px;
+        left: 10px;
+        width: 60px;
+        height: 4px;
+        border-radius: 2px;
+      }
+    }
+
+    .n {
+      top: -20px;
+    }
+
+    .s {
+      bottom: -20px;
+    }
   }
 }
 

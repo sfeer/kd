@@ -8,9 +8,18 @@ import '@/components/SBox/style/index.less'
 // 模块路由
 import router from '@/router'
 
-router.addRoute({
-  path: '/page/design/:pid',
-  component: () => import('../views/page/SDesign')
+const routers = [
+  {
+    path: '/page/list',
+    component: () => import('../views/page/List')
+  },
+  {
+    path: '/page/design/:pid',
+    component: () => import('../views/page/SDesign')
+  }
+]
+routers.forEach(d => {
+  router.addRoute(d)
 })
 
 export default app => {

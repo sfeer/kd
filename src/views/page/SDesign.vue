@@ -1,10 +1,8 @@
 <template>
-  <div class="s-design-wrapper">
+  <div class="s-design-wrapper bing-bg">
     <div class="s-design-header"></div>
     <div class="s-design-tools"></div>
-    <div class="s-design-main">
-      <s-box :data="boxs"></s-box>
-    </div>
+    <s-box class="s-design-main" :data="boxs"/>
   </div>
 </template>
 
@@ -16,13 +14,14 @@ export default {
     return {
       pageId: this.$route.params.pid,
       pageName: null,
+      bingImg: null,
       boxs: []
     }
   },
 
   created() {
     if (this.pageId) {
-      getPage(this.pageId).then(d=>{
+      getPage(this.pageId).then(d => {
         this.pageName = d.name
         this.boxs = d.boxs
       })
