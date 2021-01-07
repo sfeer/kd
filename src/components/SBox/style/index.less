@@ -7,62 +7,57 @@
     background-color: rgba(0, 0, 0, .5);
     padding: 12px;
     position: absolute;
-    border-radius: 10px;
+    border-radius: 6px;
     color: white;
+  }
 
-    .n, .s, .w, .e {
+  .new-box {
+    position: absolute;
+    border-radius: 6px;
+    border: 2px dashed rgba(0, 0, 0, .5);
+  }
+
+  .point {
+    position: absolute;
+
+    &:hover:before{
+      background-color: #d5675d;
+    }
+  }
+
+  .n,.s {
+    left: 50%;
+    margin-left: -40px;
+    width: 80px;
+    height: 40px;
+    cursor: ns-resize;
+    &:before{
       position: absolute;
-      cursor: pointer;
+      content: '';
+      background-color: white;
+      top: 18px;
+      left: 10px;
+      width: 60px;
+      height: 4px;
+      border-radius: 2px;
     }
+  }
 
-    .n,.s {
-      left: 50%;
-      margin-left: -40px;
-      width: 80px;
-      height: 40px;
-      &:before{
-        position: absolute;
-        content: '';
-        background-color: white;
-        top: 18px;
-        left: 10px;
-        width: 60px;
-        height: 4px;
-        border-radius: 2px;
-      }
-    }
-
-    .w,.e {
-      top: 50%;
-      margin-top: -40px;
-      width: 40px;
-      height: 80px;
-      &:before{
-        position: absolute;
-        content: '';
-        background-color: white;
-        top: 10px;
-        left: 18px;
-        width: 4px;
-        height: 60px;
-        border-radius: 2px;
-      }
-    }
-
-    .n {
-      top: -20px;
-    }
-
-    .s {
-      bottom: -20px;
-    }
-
-    .w {
-      left: -20px;
-    }
-
-    .e {
-      right: -20px;
+  .w,.e {
+    top: 50%;
+    margin-top: -40px;
+    width: 40px;
+    height: 80px;
+    cursor: ew-resize;
+    &:before{
+      position: absolute;
+      content: '';
+      background-color: white;
+      top: 10px;
+      left: 18px;
+      width: 4px;
+      height: 60px;
+      border-radius: 2px;
     }
   }
 }

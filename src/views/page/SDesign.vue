@@ -2,7 +2,7 @@
   <div class="s-design-wrapper bing-bg">
     <div class="s-design-header"></div>
     <div class="s-design-tools"></div>
-    <s-box class="s-design-main" :data="boxs"/>
+    <s-box class="s-design-main" :boxs="boxs"/>
   </div>
 </template>
 
