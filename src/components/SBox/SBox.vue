@@ -53,16 +53,6 @@ export default {
     }
   },
 
-  computed: {
-    boxMap() {
-      const res = {}
-      this.boxs.forEach(o => {
-        res[o.id] = o
-      })
-      return res
-    }
-  },
-
   methods: {
     // 调整大小点样式
     pointStyle(type) {
