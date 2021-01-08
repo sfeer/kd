@@ -13,8 +13,8 @@ module.exports = {
     port: 8000,
     proxy: {
       '^/api': {
-        target: 'http://localhost:8080', // 本机
-        // target: 'http://192.168.0.215:8080', // docker
+        // target: 'http://localhost:8080', // 本机
+        target: 'http://kd.longjitech.com:7080/api', // KD
         changeOrigin: true,
         logLevel: 'debug',
         pathRewrite: {'^/api': ''}

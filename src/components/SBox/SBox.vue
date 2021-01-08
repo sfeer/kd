@@ -8,7 +8,7 @@
     <div
         v-for="box in boxs"
         :key="box.id"
-        :class="{box, active: cBox===box.id}"
+        :class="{box, active: cBox&&cBox.id===box.id}"
         :style="boxStyle(box)"
         @mousedown.stop="moveDragStart(box,$event)">
       <p>{{ box.name }}</p>
@@ -17,6 +17,11 @@
     <div class="point s" :style="pointStyle('s')" @mousedown.stop="resizeDragStart('s')"></div>
     <div class="point w" :style="pointStyle('w')" @mousedown.stop="resizeDragStart('w')"></div>
     <div class="point e" :style="pointStyle('e')" @mousedown.stop="resizeDragStart('e')"></div>
+    <div class="point e" :style="pointStyle('e')" @mousedown.stop="resizeDragStart('e')"></div>
+    <div class="point ne" :style="pointStyle('ne')" @mousedown.stop="resizeDragStart('ne')"></div>
+    <div class="point nw" :style="pointStyle('nw')" @mousedown.stop="resizeDragStart('nw')"></div>
+    <div class="point se" :style="pointStyle('se')" @mousedown.stop="resizeDragStart('se')"></div>
+    <div class="point sw" :style="pointStyle('sw')" @mousedown.stop="resizeDragStart('sw')"></div>
     <div class="new-box" v-if="newBox" :style="boxStyle(newBox)"></div>
   </div>
 </template>
@@ -66,6 +71,14 @@ export default {
           return {top: (box.y + box.h / 2) + 'px', left: (box.x - 20) + 'px'}
         } else if (type === 'e') {
           return {top: (box.y + box.h / 2) + 'px', left: (box.x + box.w - 20) + 'px'}
+        } else if (type === 'nw') {
+          return {top:(box.y - 10) + 'px', left: (box.x - 10) + 'px'}
+        } else if (type === 'ne') {
+          return {top:(box.y - 10) + 'px', left: (box.x + box.w - 30) + 'px'}
+        } else if (type === 'sw') {
+          return {top:(box.y + box.h - 30) + 'px', left: (box.x - 10) + 'px'}
+        } else if (type === 'se') {
+          return {top:(box.y + box.h - 30) + 'px', left: (box.x + box.w - 30) + 'px'}
         }
       } else {
         return {display: 'none'}
@@ -119,6 +132,22 @@ export default {
             box.w -= ex
           } else if (this.cPoint === 'e') {
             box.w = ex
+          } else if (this.cPoint === 'nw') {
+            box.y += ey
+            box.h -= ey
+            box.x += ex
+            box.w -= ex
+          } else if (this.cPoint === 'ne') {
+            box.y += ey
+            box.h -= ey
+            box.w = ex
+          } else if (this.cPoint === 'sw') {
+            box.h = ey
+            box.x += ex
+            box.w -= ex
+          } else if (this.cPoint === 'se') {
+            box.w = ex
+            box.h = ey
           }
         } else if (this.dragType === 'move') {
           // TODO 计算最终位置是否有效，原始位置虚框，最终位置无效需高亮且拖拽结束后不移动
@@ -143,7 +172,6 @@ export default {
 
     // 调整大小点拖拽开始事件
     resizeDragStart(type) {
-      console.log('resize')
       this.dragType = 'resize'
       this.cPoint = type
     },

@@ -20,13 +20,11 @@ export default {
 
   methods: {
     boxStyle() {
-      const res = {
+      return {
         flexDirection: this.box.way === 'h' ? 'column' : null,
         width: this.box.w ? this.box.w * 100 + '%' : null,
         height: this.box.h ? this.box.h + 'px' : null
       }
-      console.log(111, res)
-      return res
     }
   }
 }

@@ -20,18 +20,65 @@
   .point {
     position: absolute;
 
-    &:hover:before{
+    &:hover:before, &:hover:after {
       background-color: #d5675d;
     }
   }
 
-  .n,.s {
+  .ne {
+    cursor: ne-resize;
+  }
+
+  .nw {
+    transform: rotate(-90deg);
+    cursor: nw-resize;
+  }
+
+  .sw {
+    transform: rotate(180deg);
+    cursor: sw-resize;
+  }
+
+  .se {
+    transform: rotate(90deg);
+    cursor: se-resize;
+  }
+
+  .ne, .nw, .se, .sw {
+    width: 40px;
+    height: 40px;
+
+    &:before {
+      position: absolute;
+      content: '';
+      background-color: white;
+      top: 8px;
+      left: 10px;
+      width: 22px;
+      height: 4px;
+      border-radius: 2px 4px 0 2px;
+    }
+
+    &:after {
+      position: absolute;
+      content: '';
+      background-color: white;
+      top: 12px;
+      right: 8px;
+      width: 4px;
+      height: 18px;
+      border-radius: 0 0 2px 2px;
+    }
+  }
+
+  .n, .s {
     left: 50%;
     margin-left: -40px;
     width: 80px;
     height: 40px;
     cursor: ns-resize;
-    &:before{
+
+    &:before {
       position: absolute;
       content: '';
       background-color: white;
@@ -43,13 +90,14 @@
     }
   }
 
-  .w,.e {
+  .w, .e {
     top: 50%;
     margin-top: -40px;
     width: 40px;
     height: 80px;
     cursor: ew-resize;
-    &:before{
+
+    &:before {
       position: absolute;
       content: '';
       background-color: white;
