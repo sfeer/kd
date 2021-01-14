@@ -11,11 +11,11 @@ import router from '@/router'
 const routers = [
   {
     path: '/page/list',
-    component: () => import('../views/page/List')
+    component: () => import(/* webpackChunkName: "page" */ '../views/page/List')
   },
   {
     path: '/page/design/:pid',
-    component: () => import('../views/page/SDesign')
+    component: () => import(/* webpackChunkName: "page" */ '../views/page/SDesign')
   }
 ]
 routers.forEach(d => {

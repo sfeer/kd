@@ -3,13 +3,14 @@ import App from './App'
 import router from './router'
 import antdv from '@/core/antdv'
 import page from '@/core/page'
+import demo from '@/core/demo'
 
 // 主样式
 import '@/assets/main.less'
 
-const app = createApp(App)
+createApp(App)
 .use(router)
 .use(antdv)
 .use(page)
-
-app.mount('#app')
+.use(demo)
+.mount('#app')
