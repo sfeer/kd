@@ -1,19 +1,6 @@
 # kd-web
 
-## Project setup
-```
-npm install
-```
+## 待办
 
-### Compiles and hot-reloads for development
-```
-npm run serve
-```
-
-### Compiles and minifies for production
-```
-npm run build
-```
-
-### Customize configuration
-See [Configuration Reference](https://cli.vuejs.org/config/).
+引入TypeScript
+引入ESLint
