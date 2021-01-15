@@ -1,4 +1,4 @@
-// 模块路由
+// 演示模块
 import router from '@/router'
 import MultiTab from '@/components/MultiTab'
 
@@ -12,6 +12,4 @@ routers.forEach(d => {
   router.addRoute(d)
 })
 
-export default app => {
-  app.use(MultiTab)
-}
+export default app => app.use(MultiTab)

@@ -1,10 +1,13 @@
 import {
   Button,
   ConfigProvider,
-  Modal,
-  Table,
+  Dropdown,
+  Menu,
   message,
-  notification
+  Modal,
+  notification,
+  Table,
+  Tabs
 } from 'ant-design-vue'
 
 // 全局变量
@@ -53,9 +56,12 @@ const props = {
 }
 
 export default app => {
-  app.use(Button)
-  .use(ConfigProvider)
-  .use(Table)
-
   Object.defineProperties(app.config.globalProperties, props)
+
+  return app.use(Button)
+  .use(ConfigProvider)
+  .use(Dropdown)
+  .use(Menu)
+  .use(Table)
+  .use(Tabs)
 }
