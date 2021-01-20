@@ -14,7 +14,7 @@
 
 <script>
 import {ref, computed} from 'vue'
-import {config} from '@/hook/layout'
+import {config} from '@/hook/store'
 
 export default {
   name: 'Layout',

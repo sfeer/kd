@@ -1,20 +1,24 @@
 import {reactive, readonly} from 'vue'
 
-// TODO 控制动态效果
-const cfg = reactive({
+const _config = reactive({
   siderWidth: 220,
   headerHeight: 50,
   collapsed: false,
   theme: 'default' // default dark
 })
 
-export const config = readonly(cfg)
+export const config = readonly(_config)
 
 export function collapse(v) {
-  cfg.collapsed = v
-  cfg.siderWidth = v ? 50 : 220
+  _config.collapsed = v
+  _config.siderWidth = v ? 50 : 220
 }
 
 export function setTheme(v) {
-  cfg.theme = v
+  _config.theme = v
 }
+
+const _user = reactive({
+  id: 1,
+  name: ''
+})

@@ -4,7 +4,7 @@
 </template>
 
 <script>
-import {collapse} from '@/hook/layout'
+import {collapse} from '@/hook/store'
 
 export default {
   data() {
