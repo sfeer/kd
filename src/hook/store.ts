@@ -9,12 +9,12 @@ const _config = reactive({
 
 export const config = readonly(_config)
 
-export function collapse(v) {
+export function collapse(v: boolean) {
   _config.collapsed = v
   _config.siderWidth = v ? 50 : 220
 }
 
-export function setTheme(v) {
+export function setTheme(v: string) {
   _config.theme = v
 }
 
