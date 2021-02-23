@@ -7,15 +7,13 @@ import router from '@/router'
 const routers = [
   {
     path: '/page/list',
-    component: () => import(/* webpackChunkName: "page" */ '../views/page/List')
+    component: () => import(/* webpackChunkName: "page" */ '@/views/page/List.vue')
   },
   {
     path: '/page/design/:pid',
-    component: () => import(/* webpackChunkName: "page" */ '../views/page/SDesign')
+    component: () => import(/* webpackChunkName: "page" */ '@/views/page/SDesign.vue')
   }
 ]
 routers.forEach(d => {
   router.addRoute(d)
 })
-
-export default app => app.use(SBox)
