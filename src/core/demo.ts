@@ -5,11 +5,9 @@ import MultiTab from '@/components/MultiTab'
 const routers = [
   {
     path: '/demo',
-    component: () => import(/* webpackChunkName: "demo" */ '../views/demo/Demo')
+    component: () => import(/* webpackChunkName: "demo" */ '../views/demo/Demo.vue')
   }
 ]
 routers.forEach(d => {
   router.addRoute(d)
 })
-
-export default app => app.use(MultiTab)

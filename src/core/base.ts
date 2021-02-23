@@ -7,27 +7,25 @@ import router from '@/router'
 const routers = [
   {
     path: '/',
-    component: () => import(/* webpackChunkName: "base" */ '../views/base/Layout'),
+    component: () => import(/* webpackChunkName: "base" */ '../views/base/Layout.vue'),
     children: [
       {
         path: '/',
-        component: () => import(/* webpackChunkName: "base" */ '../views/base/Home'),
+        component: () => import(/* webpackChunkName: "base" */ '../views/base/Home.vue'),
         meta: {title: '首页'}
       },
       {
         path: '/ifr/*',
-        component: () => import(/* webpackChunkName: "base" */ '../views/base/Iframe')
+        component: () => import(/* webpackChunkName: "base" */ '../views/base/Iframe.vue')
       }
     ]
   },
   {
     path: '/login',
-    component: () => import(/* webpackChunkName: "base" */ '../views/base/Login'),
+    component: () => import(/* webpackChunkName: "base" */ '../views/base/Login.vue'),
     meta: {title: '登录', requireAuth: false}
   }
 ]
 routers.forEach(d => {
   router.addRoute(d)
 })
-
-export default app => app.use(Menu).use(MultiTab)

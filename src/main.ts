@@ -1,9 +1,17 @@
-import {createApp} from 'vue'
+import { createApp } from 'vue'
 import App from './App.vue'
-import router from './router'
-import core from '@/core'
+import router, { setupRouter } from '@/router'
+import { setupStore } from '@/store'
 
-createApp(App)
-    .use(router)
-    .use(core)
-    .mount('#app')
+const app = createApp(App)
+
+// 路由配置
+setupRouter(app)
+
+// 状态存储
+setupStore(app)
+
+// 路由加载完成后渲染页面
+router.isReady().then(() => {
+  app.mount('#app', true)
+})
