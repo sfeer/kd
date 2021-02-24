@@ -8,9 +8,6 @@ const app = createApp(App)
 // 路由配置
 setupRouter(app)
 
-const a = [1, 2, 3, 4, 5, 6]
-const b = { a, b: 2 }
-
 // 状态存储
 setupStore(app)
 
