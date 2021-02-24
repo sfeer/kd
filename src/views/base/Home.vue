@@ -4,19 +4,19 @@
 </template>
 
 <script>
-import {collapse} from '@/hook/store'
+import { collapse } from '@/hook/store'
 
 export default {
   data() {
     return {
-      collapsed: false
+      collapsed: false,
     }
   },
   methods: {
     test() {
       this.collapsed = !this.collapsed
       collapse(this.collapsed)
-    }
-  }
+    },
+  },
 }
 </script>

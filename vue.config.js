@@ -3,24 +3,24 @@ module.exports = {
     loaderOptions: {
       less: {
         lessOptions: {
-          javascriptEnabled: true
-        }
-      }
-    }
+          javascriptEnabled: true,
+        },
+      },
+    },
   },
 
   devServer: {
-    port: 8000,
+    port: 3100,
     proxy: {
       '^/api': {
         // target: 'http://localhost:8080', // 本机
         target: 'http://kd.longjitech.com:7080/api', // KD
         changeOrigin: true,
         logLevel: 'debug',
-        pathRewrite: {'^/api': ''}
-      }
-    }
+        pathRewrite: { '^/api': '' },
+      },
+    },
   },
 
-  productionSourceMap: false
+  productionSourceMap: false,
 }

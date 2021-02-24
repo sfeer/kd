@@ -14,7 +14,7 @@ export default {
 
   data() {
     return {
-      tree: []
+      tree: [],
     }
   },
 
@@ -23,11 +23,9 @@ export default {
   },
 
   methods: {
-    loadData() {
-
-    }
+    loadData() {},
   },
 
-  components: {XBox}
+  components: { XBox },
 }
 </script>

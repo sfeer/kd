@@ -1,5 +1,5 @@
 <template>
-  <div class="x-box" :class="box.child?null:'leaf'" :style="boxStyle()">
+  <div class="x-box" :class="box.child ? null : 'leaf'" :style="boxStyle()">
     <template v-if="box.child">
       <x-box v-for="box in box.child" :key="box.id" :box="box"></x-box>
     </template>
@@ -14,8 +14,8 @@ export default {
     box: {
       default() {
         return {}
-      }
-    }
+      },
+    },
   },
 
   methods: {
@@ -23,9 +23,9 @@ export default {
       return {
         flexDirection: this.box.way === 'h' ? 'column' : null,
         width: this.box.w ? this.box.w * 100 + '%' : null,
-        height: this.box.h ? this.box.h + 'px' : null
+        height: this.box.h ? this.box.h + 'px' : null,
       }
-    }
-  }
+    },
+  },
 }
 </script>

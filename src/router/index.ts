@@ -1,11 +1,11 @@
-import {createRouter, createWebHistory} from 'vue-router'
-import type {App} from 'vue'
-import {basicRoutes} from './routers'
+import { createRouter, createWebHistory } from 'vue-router'
+import type { App } from 'vue'
+import { basicRoutes } from './routers'
 
 const router = createRouter({
   history: createWebHistory(process.env.BASE_URL),
   routes: basicRoutes,
-  strict: true
+  strict: true,
   // TODO scrollBehavior
 })
 

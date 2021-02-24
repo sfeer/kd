@@ -1,10 +1,10 @@
-import {reactive, readonly} from 'vue'
+import { reactive, readonly } from 'vue'
 
 const _config = reactive({
   siderWidth: 220,
   headerHeight: 50,
   collapsed: false,
-  theme: 'default' // default dark
+  theme: 'default', // default dark
 })
 
 export const config = readonly(_config)
@@ -20,5 +20,5 @@ export function setTheme(v: string) {
 
 const _user = reactive({
   id: 1,
-  name: ''
+  name: '',
 })

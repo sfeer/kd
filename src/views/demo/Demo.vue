@@ -9,7 +9,7 @@ export default {
   methods: {
     test() {
       this.$multiTab.open('/demo', 'success')
-    }
-  }
+    },
+  },
 }
 </script>

@@ -7,13 +7,15 @@ import router from '@/router'
 const routers = [
   {
     path: '/page/list',
-    component: () => import(/* webpackChunkName: "page" */ '@/views/page/List.vue')
+    component: () =>
+      import(/* webpackChunkName: "page" */ '@/views/page/List.vue'),
   },
   {
     path: '/page/design/:pid',
-    component: () => import(/* webpackChunkName: "page" */ '@/views/page/SDesign.vue')
-  }
+    component: () =>
+      import(/* webpackChunkName: "page" */ '@/views/page/SDesign.vue'),
+  },
 ]
-routers.forEach(d => {
+routers.forEach((d) => {
   router.addRoute(d)
 })

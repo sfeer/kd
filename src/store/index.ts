@@ -1,5 +1,5 @@
-import type {App} from 'vue'
-import {createStore} from 'vuex'
+import type { App } from 'vue'
+import { createStore } from 'vuex'
 
 const store = createStore({})
 

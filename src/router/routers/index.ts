@@ -1,5 +1,5 @@
-import type {RouteRecordRaw} from 'vue-router'
-import {PageEnum} from '@/enums/pageEnum'
+import type { RouteRecordRaw } from 'vue-router'
+import { PageEnum } from '@/enums/pageEnum'
 
 export const HomeRoute: RouteRecordRaw = {
   path: '/',
@@ -7,7 +7,7 @@ export const HomeRoute: RouteRecordRaw = {
   redirect: PageEnum.BASE_HOME,
   meta: {
     title: '首页',
-  }
+  },
 }
 
 export const LoginRoute: RouteRecordRaw = {
@@ -16,7 +16,7 @@ export const LoginRoute: RouteRecordRaw = {
   component: () => import('@/views/sys/login/Login.vue'),
   meta: {
     title: '登录页',
-  }
+  },
 }
 
 export const basicRoutes: RouteRecordRaw[] = [LoginRoute, HomeRoute]

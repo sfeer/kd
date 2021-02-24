@@ -2,12 +2,12 @@
   <div class="s-design-wrapper bing-bg">
     <div class="s-design-header"></div>
     <div class="s-design-tools"></div>
-    <s-box class="s-design-main" :boxs="boxs"/>
+    <s-box class="s-design-main" :boxs="boxs" />
   </div>
 </template>
 
 <script>
-import {getPage} from '@/api/page'
+import { getPage } from '@/api/page'
 
 export default {
   data() {
@@ -15,17 +15,17 @@ export default {
       pageId: this.$route.params.pid,
       pageName: null,
       bingImg: null,
-      boxs: []
+      boxs: [],
     }
   },
 
   created() {
     if (this.pageId) {
-      getPage(this.pageId).then(d => {
+      getPage(this.pageId).then((d) => {
         this.pageName = d.name
         this.boxs = d.boxs
       })
     }
-  }
+  },
 }
 </script>

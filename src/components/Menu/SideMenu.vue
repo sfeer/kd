@@ -2,18 +2,24 @@
   <div class="logo" v-show="!collapsed">看到变化</div>
   <div class="logo" v-show="collapsed">KD</div>
   <a-menu
-      :mode="mode"
-      :theme="theme"
-      :inline-collapsed="collapsed"
-      v-model="activeMenu"
-      :openKeys.sync="openMenu"
-      @click="menuSelect">
+    :mode="mode"
+    :theme="theme"
+    :inline-collapsed="collapsed"
+    v-model="activeMenu"
+    v-model:openKeys="openMenu"
+    @click="menuSelect"
+  >
     <template v-for="item in menus">
       <a-menu-item v-if="!item.children" :key="item.id">
-        <a-icon :type="item.icon?item.icon:'mail'"/>
+        <a-icon :type="item.icon ? item.icon : 'mail'" />
         <span>{{ item.name }}</span>
       </a-menu-item>
-      <sub-menu v-else :menu-info="item" :subMenuCloseDelay="5" :key="item.id"/>
+      <sub-menu
+        v-else
+        :menu-info="item"
+        :subMenuCloseDelay="5"
+        :key="item.id"
+      />
     </template>
   </a-menu>
 </template>
@@ -25,7 +31,7 @@ export default {
   data() {
     return {
       activeMenu: [],
-      openMenu: []
+      openMenu: [],
     }
   },
 
@@ -33,27 +39,27 @@ export default {
     mode: {
       type: String,
       required: false,
-      default: 'inline'
+      default: 'inline',
     },
     theme: {
       type: String,
       required: false,
-      default: 'light'
+      default: 'light',
     },
     collapsible: {
       type: Boolean,
       required: false,
-      default: true
+      default: true,
     },
     collapsed: {
       type: Boolean,
       required: false,
-      default: false
+      default: false,
     },
     menus: {
       type: Array,
-      required: true
-    }
+      required: true,
+    },
   },
 
   created() {
@@ -69,19 +75,21 @@ export default {
       if (v) {
         this.openMenu = []
       }
-    }
+    },
   },
 
   computed: {
     menuMap() {
       return this._loopMenu(this.menus)
-    }
+    },
   },
 
   methods: {
     active(route) {
-      const path = route.fullPath.startsWith('/ifr/') ? route.fullPath.substr(4) : route.fullPath
-      const menu = Object.values(this.menuMap).find(d => d.url === path)
+      const path = route.fullPath.startsWith('/ifr/')
+        ? route.fullPath.substr(4)
+        : route.fullPath
+      const menu = Object.values(this.menuMap).find((d) => d.url === path)
       if (menu) {
         this.activeMenu = [menu.id]
         if (!this.collapsed) {
@@ -111,7 +119,7 @@ export default {
       for (const m of menus) {
         res[m.id] = m
         if (m.children) {
-          res = {...this._loopMenu(m.children), ...res}
+          res = { ...this._loopMenu(m.children), ...res }
         }
       }
       return res
@@ -123,8 +131,8 @@ export default {
         this.openMenu.push(pid)
         this._openMenu(this.menuMap[pid])
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
@@ -157,4 +165,3 @@ export default {
   }
 }
 </style>
-

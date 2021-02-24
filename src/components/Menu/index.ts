@@ -5,6 +5,6 @@ export default {
   install(app: App) {
     app.component(SideMenu.name, SideMenu)
     app.component(SubMenu.name, SubMenu)
-    return app;
-  }
+    return app
+  },
 }

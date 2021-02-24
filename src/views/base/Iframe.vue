@@ -23,8 +23,8 @@ export default {
       if (event.data && event.data.path) {
         this.$multiTab.open(event.data.path, event.data.name)
       }
-    }
-  }
+    },
+  },
 }
 </script>
 
