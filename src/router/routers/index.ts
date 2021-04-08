@@ -11,7 +11,7 @@ export const HomeRoute: RouteRecordRaw = {
 }
 
 export const LoginRoute: RouteRecordRaw = {
-  path: '/login',
+  path: PageEnum.BASE_LOGIN,
   name: 'Login',
   component: () => import('@/views/sys/login/Login.vue'),
   meta: {

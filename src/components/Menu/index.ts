@@ -1,10 +1,4 @@
-import SideMenu from './SideMenu'
-import SubMenu from './SubMenu'
+import SideMenu from './SideMenu.vue'
+import SubMenu from './SubMenu.vue'
 
-export default {
-  install(app: App) {
-    app.component(SideMenu.name, SideMenu)
-    app.component(SubMenu.name, SubMenu)
-    return app
-  },
-}
+export { SideMenu, SubMenu }
