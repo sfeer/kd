@@ -11,6 +11,9 @@ setupRouter(app)
 // 状态存储
 setupStore(app)
 
+// AntDesign
+setupAntDesin(app)
+
 // 路由加载完成后渲染页面
 router.isReady().then(() => {
   app.mount('#app', true)
