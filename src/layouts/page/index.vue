@@ -1,7 +1,9 @@
 <template>
   <router-view>
     <template #default="{ Component, route }">
-      <component :is="Component" :key="route.fullPath" />
+      <keep-alive>
+        <component :is="Component" :key="route.fullPath" />
+      </keep-alive>
     </template>
   </router-view>
 </template>
