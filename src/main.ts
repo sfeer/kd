@@ -2,6 +2,7 @@ import { createApp } from 'vue'
 import App from './App.vue'
 import router, { setupRouter } from '@/router'
 import { setupStore } from '@/store'
+import { setupAntDesign } from '@/core/antd'
 
 const app = createApp(App)
 
@@ -12,7 +13,7 @@ setupRouter(app)
 setupStore(app)
 
 // AntDesign
-setupAntDesin(app)
+setupAntDesign(app)
 
 // 路由加载完成后渲染页面
 router.isReady().then(() => {

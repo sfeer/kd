@@ -1,7 +1,7 @@
 // 基础模块
 import '@/assets/base.less'
-import Menu from '@/components/Menu'
-import MultiTab from '@/components/MultiTab'
+import Menu from '@/components/Menu.vue'
+import MultiTab from '@/components/MultiTab.vue'
 import router from '@/router'
 
 const routers = [
