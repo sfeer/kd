@@ -2,6 +2,9 @@ module.exports = {
   css: {
     loaderOptions: {
       less: {
+        globalVars: {
+          hack: `true; @import '~@/design/var.less';`,
+        },
         javascriptEnabled: true,
       },
     },
