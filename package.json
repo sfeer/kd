@@ -1,39 +1,24 @@
 {
-  "name": "kd-web",
-  "version": "0.1.0",
-  "private": true,
+  "name": "kd",
+  "version": "0.0.1",
+  "description": "看到",
+  "main": "index.js",
   "scripts": {
-    "serve": "vue-cli-service serve",
-    "build": "vue-cli-service build",
-    "lint": "vue-cli-service lint"
+    "test": "echo \"Error: no test specified\" && exit 1"
   },
-  "dependencies": {
-    "@ant-design-vue/pro-layout": "^3.0.0-beta.5",
-    "@vueuse/core": "^4.8.4",
-    "ant-design-vue": "^2.1.2",
-    "axios": "^0.21.1",
-    "core-js": "^3.10.1",
-    "vue": "^3.0.11",
-    "vue-router": "^4.0.6"
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/sfeer/kd.git"
   },
+  "keywords": [
+    "typescript"
+  ],
+  "bugs": {
+    "url": "https://github.com/sfeer/kd/issues"
+  },
+  "homepage": "https://github.com/sfeer/kd",
+  "license": "MIT",
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^2.34.0",
-    "@typescript-eslint/parser": "^2.34.0",
-    "@vue/cli-plugin-babel": "^4.5.12",
-    "@vue/cli-plugin-eslint": "^4.5.12",
-    "@vue/cli-plugin-router": "^4.5.12",
-    "@vue/cli-plugin-typescript": "^4.5.12",
-    "@vue/cli-service": "^4.5.12",
-    "@vue/compiler-sfc": "^3.0.11",
-    "@vue/eslint-config-prettier": "^6.0.0",
-    "@vue/eslint-config-typescript": "^5.1.0",
-    "babel-plugin-import": "^1.13.3",
-    "eslint": "^6.8.0",
-    "eslint-plugin-prettier": "^3.3.1",
-    "eslint-plugin-vue": "^7.8.0",
-    "less": "^3.13.1",
-    "less-loader": "^5.0.0",
-    "prettier": "^2.2.1",
     "typescript": "^4.2.4"
   }
 }
