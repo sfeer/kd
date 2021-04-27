@@ -1,6 +1,6 @@
 {
-  "name": "kd",
-  "version": "0.0.1",
+  "name": "@sfeer/kd",
+  "version": "0.0.5",
   "description": "看到",
   "scripts": {
     "build": "tsc"
