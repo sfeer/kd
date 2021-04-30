@@ -1,6 +1,6 @@
 {
   "name": "@sfeer/kd",
-  "version": "0.0.5",
+  "version": "0.0.8",
   "description": "看到",
   "scripts": {
     "build": "tsc"
@@ -9,6 +9,9 @@
     "type": "git",
     "url": "git+https://github.com/sfeer/kd.git"
   },
+  "type": "commonjs",
+  "main": "./dist/index.js",
+  "types": "./dist/index.d.ts",
   "keywords": [
     "typescript"
   ],
