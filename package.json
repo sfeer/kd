@@ -3,15 +3,14 @@
   "version": "0.0.8",
   "description": "看到",
   "scripts": {
-    "build": "vue-cli-service build --target lib --name kd src/index.ts"
+    "build": "vue-cli-service build --target lib --name kd --dest lib packages/index.ts"
   },
   "repository": {
     "type": "git",
     "url": "git+https://github.com/sfeer/kd.git"
   },
   "type": "commonjs",
-  "main": "./dist/index.js",
-  "types": "./dist/index.d.ts",
+  "main": "lib/kd.umd.js",
   "keywords": [
     "typescript"
   ],
@@ -46,5 +45,6 @@
     "less-loader": "^10.0.0",
     "prettier": "^2.0.0",
     "typescript": "^4.0.0"
-  }
+  },
+  "packageManager": "yarn@1.22.18"
 }
