@@ -1,0 +1,12 @@
+# 不使用分号
+semi: false
+# 单引号
+singleQuote: true
+# 代码换行宽度
+printWidth: 120
+# VUE内嵌代码格式化
+vueIndentScriptAndStyle: true
+# 换行符
+endOfLine: lf
+# 箭头函数
+arrowParens: avoid

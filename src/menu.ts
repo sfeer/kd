@@ -8,7 +8,7 @@ interface KdMenuItem {
 }
 
 export default class KdMenu {
-  private path: string = '/'
+  private path = '/'
   // 高亮菜单
   private activeMenu: string[] = []
   // 开启菜单
