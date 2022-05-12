@@ -14,13 +14,10 @@
     "baseUrl": ".",
     "types": ["webpack-env"],
     "paths": {
-      "@/*": ["src/*"]
+      "@/*": ["examples/*"]
     },
     "lib": ["esnext", "dom", "dom.iterable", "scripthost"]
   },
-  "include": [
-    "packages/**/*.ts",
-    "packages/**/*.tsx",
-    "packages/**/*.vue", "tests/**/*.ts", "tests/**/*.tsx"],
+  "include": ["packages/**/*.ts", "packages/**/*.vue", "examples/**/*.ts", "examples/**/*.vue", "typings/**/*.ts"],
   "exclude": ["node_modules"]
 }
