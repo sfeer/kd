@@ -1,10 +1,11 @@
 {
   "name": "@sfeer/kd",
-  "version": "0.0.9",
+  "version": "0.1.0",
   "description": "看到",
   "scripts": {
-    "build": "vue-cli-service build examples/main.ts",
-    "build:lib": "vue-cli-service build --target lib --name kd --dest lib packages/index.ts"
+    "dev": "vite --config build/base.config.ts",
+    "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts",
+    "build:lib": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts"
   },
   "repository": {
     "type": "git",
@@ -21,30 +22,19 @@
   "homepage": "https://github.com/sfeer/kd",
   "license": "MIT",
   "dependencies": {
-    "ant-design-vue": "^3.0.0",
+    "ant-design-vue": "3",
     "axios": "latest",
-    "core-js": "^3.0.0",
-    "vue": "^3.0.0",
-    "vue-router": "^4.0.0"
+    "vue": "3",
+    "vue-router": "4"
   },
   "devDependencies": {
-    "@typescript-eslint/eslint-plugin": "^5.0.0",
-    "@typescript-eslint/parser": "^5.0.0",
-    "@vue/cli-plugin-babel": "^5.0.0",
-    "@vue/cli-plugin-eslint": "^5.0.0",
-    "@vue/cli-plugin-router": "^5.0.0",
-    "@vue/cli-plugin-typescript": "^5.0.0",
-    "@vue/cli-service": "^5.0.0",
-    "@vue/eslint-config-typescript": "^10.0.0",
-    "babel-plugin-import": "^1.0.0",
-    "eslint": "^8.0.0",
-    "eslint-config-prettier": "^8.0.0",
-    "eslint-plugin-prettier": "^4.0.0",
-    "eslint-plugin-vue": "^8.0.0",
-    "less": "^4.0.0",
-    "less-loader": "^10.0.0",
-    "prettier": "^2.0.0",
-    "typescript": "^4.0.0"
-  },
-  "packageManager": "yarn@1.22.18"
+    "@vitejs/plugin-vue": "2",
+    "less": "4",
+    "prettier": "2",
+    "typescript": "4",
+    "vite": "2",
+    "vite-plugin-dts": "1",
+    "vite-plugin-md": "latest",
+    "vue-tsc": "latest"
+  }
 }

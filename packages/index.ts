@@ -1,5 +1,11 @@
-import KdMenu from './menu'
+import { App, Plugin } from 'vue'
 
-export default {
-  KdMenu,
+import { ButtonPlugin } from './Button'
+
+const KdPlugin: Plugin = {
+  install(app: App) {
+    ButtonPlugin.install?.(app)
+  },
 }
+
+export default KdPlugin

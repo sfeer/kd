@@ -6,11 +6,8 @@ public/
 node_modules/
 typings/
 
-.browserslistrc
 .editorconfig
-.eslintrc.js
 .gitignore
-babel.config.js
 tsconfig.json
 vue.config.js
 yarn.lock
