@@ -1,15 +1,13 @@
-.idea
-docs/
-examples/
-packages/
-public/
+.idea/
+.github/
+build/
 node_modules/
+packages/
+src/
 typings/
 
 .editorconfig
 .gitignore
+index.html
 tsconfig.json
-vue.config.js
 yarn.lock
-
-

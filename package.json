@@ -1,6 +1,6 @@
 {
   "name": "@sfeer/kd",
-  "version": "0.1.0",
+  "version": "0.1.2",
   "description": "看到",
   "scripts": {
     "dev": "vite --config build/base.config.ts",
@@ -12,7 +12,8 @@
     "url": "git+https://github.com/sfeer/kd.git"
   },
   "type": "commonjs",
-  "main": "lib/kd.umd.min.js",
+  "main": "dist/kd.umd.js",
+  "typings": "dist/typings",
   "keywords": [
     "typescript"
   ],
