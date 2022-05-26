@@ -1,9 +1,9 @@
 {
   "name": "@sfeer/kd",
-  "version": "0.1.2",
-  "description": "看到",
+  "version": "0.1.6",
+  "description": "看到，基于ant-design-vue的二次封装",
   "scripts": {
-    "dev": "vite --config build/base.config.ts",
+    "dev": "vite --config ./build/base.config.ts",
     "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts",
     "build:lib": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts"
   },
@@ -11,10 +11,19 @@
     "type": "git",
     "url": "git+https://github.com/sfeer/kd.git"
   },
-  "type": "commonjs",
-  "main": "dist/kd.umd.js",
-  "typings": "dist/typings",
+  "files": [
+    "dist"
+  ],
+  "main": "./dist/kd.umd.js",
+  "module": "./dist/kd.es.js",
+  "exports": {
+    ".": {
+      "import": "./dist/kd.es.js",
+      "require": "./dist/kd.umd.js"
+    }
+  },
   "keywords": [
+    "vue3",
     "typescript"
   ],
   "bugs": {
@@ -24,7 +33,7 @@
   "license": "MIT",
   "dependencies": {
     "ant-design-vue": "3",
-    "axios": "latest",
+    "axios": "0",
     "vue": "3",
     "vue-router": "4"
   },
@@ -35,7 +44,7 @@
     "typescript": "4",
     "vite": "2",
     "vite-plugin-dts": "1",
-    "vite-plugin-md": "latest",
-    "vue-tsc": "latest"
+    "vite-plugin-md": "0",
+    "vue-tsc": "0"
   }
 }

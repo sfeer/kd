@@ -8,6 +8,7 @@ typings/
 
 .editorconfig
 .gitignore
+.prettierrc
 index.html
 tsconfig.json
 yarn.lock
