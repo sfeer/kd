@@ -4,8 +4,8 @@
   "description": "看到，基于ant-design-vue的二次封装",
   "scripts": {
     "dev": "vite --config ./build/base.config.ts",
-    "build:doc": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts",
-    "build:lib": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts"
+    "doc:build": "vue-tsc --noEmit && vite build --config ./build/doc.config.ts",
+    "lib:build": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts"
   },
   "repository": {
     "type": "git",
