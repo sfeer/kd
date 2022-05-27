@@ -16,8 +16,6 @@ jobs:
           node-version: 16
           registry-url: https://registry.npmjs.org/
           cache: yarn
-      - run: npm install
-      - run: npm ls
 
       - name: Build 📚
         run: yarn install && yarn lib:build
