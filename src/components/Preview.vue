@@ -72,31 +72,3 @@
     },
   }
 </script>
-
-<style lang="less">
-  pre {
-    line-height: 0;
-  }
-  .mykit-preview {
-    border: 1px dashed #e7e7e7;
-    padding: 10px;
-    section {
-      margin: 15px;
-    }
-  }
-
-  .source-code {
-    max-height: 500px;
-  }
-  .language-html {
-    margin: 0;
-    padding: 0 15px;
-  }
-  .preview-bottom {
-    height: 40px;
-    display: flex;
-    justify-content: center;
-    align-items: center;
-    border-top: 1px dashed #e7e7e7;
-  }
-</style>
