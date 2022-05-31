@@ -1,14 +1,14 @@
 <template>
-  <div class="mykit-preview">
+  <div>
     <section>
       <slot></slot>
     </section>
 
-    <div v-show="codeVisible" class="source-code">
-      <pre class="language-html"><code class="language-html">{{ previewSourceCode }}</code></pre>
+    <div v-show="codeVisible">
+      <pre><code>{{ previewSourceCode }}</code></pre>
     </div>
 
-    <div class="preview-bottom">
+    <div>
       <span @click="showSourceCode">查看代码</span>
     </div>
   </div>
@@ -22,13 +22,11 @@
 
   export default {
     props: {
-      /** 组件名称 */
       compName: {
         type: String,
         default: '',
         require: true,
       },
-      /** 要显示代码的组件 */
       demoName: {
         type: String,
         default: '',
