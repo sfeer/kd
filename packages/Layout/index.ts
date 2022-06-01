@@ -2,8 +2,6 @@ import { App, Plugin } from 'vue'
 import Row from './src/row.vue'
 import Col from './src/col.vue'
 
-import './style'
-
 export const LayoutPlugin: Plugin = {
   install(app: App) {
     app.component('kd-row', Row)

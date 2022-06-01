@@ -10,3 +10,4 @@ declare module '*.md' {
   export default Component;
 }
 
+declare module '@ckpack/vue-color'

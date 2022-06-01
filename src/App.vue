@@ -1,7 +1,13 @@
 <template>
+  <header>
+    <a-switch v-model:checked="checked" @change="themeChange"></a-switch>
+    <Sketch v-model="colors"></Sketch>
+  </header>
   <div class="kd-doc">
     <aside>
-      <router-link v-for="(link, index) in links" :key="index" :to="`/components/${link.name}`">{{ link.name }}</router-link>
+      <router-link class="kd-link" v-for="(link, index) in links" :key="index" :to="`/components/${link.name}`">
+        {{ link.name }}
+      </router-link>
     </aside>
     <main>
       <router-view></router-view>
@@ -9,11 +15,25 @@
   </div>
 </template>
 
-<script setup>
+<script setup lang="ts">
+  import { Sketch } from '@ckpack/vue-color'
+  import { Switch as ASwitch } from 'ant-design-vue'
   import comps from './config/comp.config'
   import { ref } from 'vue'
+  // @ts-ignore
+  import { toggleTheme } from '@zougt/vite-plugin-theme-preprocessor/dist/browser-utils'
 
   const links = ref(comps)
+  const checked = ref<boolean>(false)
+  const colors = ref<string>('#194d33')
+
+  function themeChange() {
+    if (checked.value) {
+      toggleTheme({ scopeName: `theme-dark` })
+    } else {
+      toggleTheme({ scopeName: `theme-default` })
+    }
+  }
 </script>
 
 <style lang="less">
@@ -25,12 +45,16 @@
 
   .kd-doc {
     display: flex;
-    min-height: 100vh;
 
     aside {
       width: 200px;
       padding: 15px;
       border-right: 1px solid #ccc;
+
+      .kd-link {
+        display: block;
+        text-align: center;
+      }
     }
 
     main {

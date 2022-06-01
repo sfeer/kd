@@ -35,10 +35,12 @@
     "ant-design-vue": "3",
     "axios": "0",
     "vue": "3",
-    "vue-router": "4"
+    "vue-router": "4",
+    "vue3-colorpicker": "2"
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "2",
+    "@zougt/vite-plugin-theme-preprocessor": "1",
     "less": "4",
     "prettier": "2",
     "typescript": "4",

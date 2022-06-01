@@ -10,6 +10,8 @@
 
 相关文档后期需要整理到docs中
 
+corepack prepare yarn @x.y.z --activate
+
 ## 待办
 
 github工作流   npm发布   开发文档
