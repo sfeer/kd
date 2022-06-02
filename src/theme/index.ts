@@ -18,5 +18,3 @@ export function addStyle(content: string) {
   styleDom.innerHTML = content
   head.appendChild(styleDom)
 }
-
-// https://blog.csdn.net/qq_41499782/article/details/117015678

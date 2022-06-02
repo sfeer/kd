@@ -1,7 +1,7 @@
 <template>
   <a-config-provider>
     <header>
-      <a-switch v-model:checked="checked" @change="themeChange"></a-switch>
+      <a-switch v-model:checked="checked"></a-switch>
       <kd-color-picker v-model:pureColor="color"></kd-color-picker>
       <div>{{ color }}</div>
     </header>
@@ -20,6 +20,7 @@
 
 <script setup lang="ts">
   import { Switch as ASwitch, ConfigProvider as AConfigProvider } from 'ant-design-vue'
+  import { changeTheme } from './theme'
   import comps from './config/comp.config'
   import { ref, watch } from 'vue'
 
@@ -27,21 +28,18 @@
   const checked = ref<boolean>(false)
   const color = ref<string>('#512da7')
 
-  watch(color, v => {
+  watch([color, checked], ([v, x]) => {
     AConfigProvider.config({
       theme: {
         primaryColor: v,
       },
     })
+    if (x) {
+      changeTheme('dark')
+    } else {
+      changeTheme('default')
+    }
   })
-
-  function themeChange() {
-    // if (checked.value) {
-    //   toggleTheme({ scopeName: `theme-dark` })
-    // } else {
-    //   toggleTheme({ scopeName: `theme-default` })
-    // }
-  }
 </script>
 
 <style lang="less">
