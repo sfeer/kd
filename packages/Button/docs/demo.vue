@@ -1,7 +1,7 @@
 <template>
   <div>
-    <kd-button @click="onClick(1)">第一个</kd-button>
-    <kd-button @click="onClick(2)">第二个</kd-button>
+    <kd-button type="primary" @click="onClick(1)">第一个</kd-button>
+    <kd-button type="primary" @click="onClick(2)">第二个</kd-button>
     <kd-button @click="onClick(3)">第三个</kd-button>
   </div>
 </template>

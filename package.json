@@ -40,7 +40,6 @@
   },
   "devDependencies": {
     "@vitejs/plugin-vue": "2",
-    "@zougt/vite-plugin-theme-preprocessor": "1",
     "less": "4",
     "prettier": "2",
     "typescript": "4",

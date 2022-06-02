@@ -15,14 +15,9 @@
     // 允许编译javascript文件，默认false
     "allowJs": true,
     "lib": ["esnext", "dom"],
-    "skipLibCheck": true
+    "skipLibCheck": true,
+    "types": ["vite/client"]
   },
-  "include": [
-    "packages/**/*.ts",
-    "packages/**/*.vue",
-    "src/**/*.ts",
-    "src/**/*.vue",
-    "typings/**/*.d.ts"
-  ],
+  "include": ["packages/**/*.ts", "packages/**/*.vue", "src/**/*.ts", "src/**/*.vue", "typings/**/*.d.ts"],
   "exclude": ["node_modules"]
 }

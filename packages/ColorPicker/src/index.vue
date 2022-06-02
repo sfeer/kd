@@ -1,11 +1,21 @@
 <template>
-  <color-picker v-model:pureColor="pureColor"></color-picker>
+  <color-picker v-model:pureColor="pureColor" format="name"></color-picker>
 </template>
 
 <script setup lang="ts">
   import { ColorPicker } from 'vue3-colorpicker'
   import 'vue3-colorpicker/style.css'
-  import { ref } from 'vue'
+  import { computed } from 'vue'
 
-  const pureColor = ref<string>('#7166de')
+  const props = defineProps(['modelValue'])
+  const emit = defineEmits(['update:modelValue'])
+
+  const pureColor = computed({
+    get() {
+      return props.modelValue
+    },
+    set(value) {
+      emit('update:modelValue', value)
+    },
+  })
 </script>
