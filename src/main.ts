@@ -4,7 +4,8 @@ import router from './router'
 import Kd from '../packages'
 import Preview from './components/Preview.vue'
 
-import 'ant-design-vue/dist/antd.variable.min.css'
+import 'ant-design-vue/dist/antd.variable.less'
+import './assets/style/theme.less'
 
 const app = createApp(App)
 app.component('kd-preview', Preview)

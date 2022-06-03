@@ -1,26 +1,23 @@
 <template>
-  <a-config-provider>
-    <header>
-      <a-switch v-model:checked="checked"></a-switch>
-      <kd-color-picker v-model:pureColor="color"></kd-color-picker>
-      <div>{{ color }}</div>
-    </header>
-    <div class="kd-doc">
-      <aside>
-        <router-link class="kd-link" v-for="(link, index) in links" :key="index" :to="`/components/${link.name}`">
-          {{ link.name }}
-        </router-link>
-      </aside>
-      <main>
-        <router-view></router-view>
-      </main>
-    </div>
-  </a-config-provider>
+  <header>
+    <a-switch v-model:checked="checked"></a-switch>
+    <kd-color-picker v-model:pureColor="color"></kd-color-picker>
+  </header>
+  <div class="kd-doc">
+    <aside>
+      <router-link class="kd-link" v-for="(link, index) in links" :key="index" :to="`/components/${link.name}`">
+        {{ link.name }}
+      </router-link>
+    </aside>
+    <main>
+      <router-view></router-view>
+    </main>
+  </div>
 </template>
 
 <script setup lang="ts">
-  import { Switch as ASwitch, ConfigProvider as AConfigProvider } from 'ant-design-vue'
-  import { changeTheme } from './theme'
+  import { Switch as ASwitch } from 'ant-design-vue'
+  import { changeTheme, dynamicTheme } from './assets/style'
   import comps from './config/comp.config'
   import { ref, watch } from 'vue'
 
@@ -29,16 +26,8 @@
   const color = ref<string>('#512da7')
 
   watch([color, checked], ([v, x]) => {
-    AConfigProvider.config({
-      theme: {
-        primaryColor: v,
-      },
-    })
-    if (x) {
-      changeTheme('dark')
-    } else {
-      changeTheme('default')
-    }
+    dynamicTheme({ 'primary-color': v })
+    changeTheme(x ? 'dark' : undefined)
   })
 </script>
 

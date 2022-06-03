@@ -12,6 +12,8 @@
 
 corepack prepare yarn @x.y.z --activate
 
+https://cloud.tencent.com/developer/article/1942747
+
 ## 待办
 
 github工作流   npm发布   开发文档
