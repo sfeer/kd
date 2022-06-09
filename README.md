@@ -12,7 +12,7 @@
 
 corepack prepare yarn @x.y.z --activate
 
-https://cloud.tencent.com/developer/article/1942747
+页面风格样式需要内置3套，科技、简约、国风
 
 ## 待办
 
