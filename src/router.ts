@@ -1,12 +1,6 @@
 import { createRouter, createWebHashHistory, RouterOptions } from 'vue-router'
-import comps from './config/comp.config'
 
-const routes = comps?.map(c=>({
-  title: c.cname,
-  name: c.name,
-  path: `/components/${c.name}`,
-  component: () => import(`../packages/${c.name}/docs/README.md`),
-}))
+const routes = [{ path: '/', component: () => import('./Home.vue') }]
 
 const routerConfig = {
   history: createWebHashHistory(),
