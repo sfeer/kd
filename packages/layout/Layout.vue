@@ -1,11 +1,15 @@
 <template>
   <div class="kd-header">
-    <div class="logo"></div>
+    <div class="kd-title">XXXX系统</div>
+    <div class='kd-seach-form'>搜索框</div>
     <a-switch v-model:checked="checked"></a-switch>
     <kd-color-picker v-model:pureColor="color"></kd-color-picker>
   </div>
   <div class="kd-content"><slot></slot></div>
-  <div class="kd-sider">菜单</div>
+  <div class="kd-sider">
+    <div class="kd-logo">LOGO</div>
+    <kd-menu></kd-menu>
+  </div>
 </template>
 
 <script setup lang="ts">
@@ -18,8 +22,8 @@
   // https://codesign.qq.com/s/NlO1ZnQOWw0LMV2
 
   import { Switch as ASwitch } from 'ant-design-vue'
-  import { ref, watch } from "vue";
-  import { changeTheme, dynamicTheme } from "../../src/assets/style";
+  import { ref, watch } from 'vue'
+  import { changeTheme, dynamicTheme } from '../../src/assets/style'
   import './style'
 
   const checked = ref<boolean>(false)
