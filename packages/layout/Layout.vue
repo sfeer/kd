@@ -1,7 +1,7 @@
 <template>
   <div class="kd-header">
     <div class="kd-title">XXXX系统</div>
-    <div class='kd-seach-form'>搜索框</div>
+    <div class="kd-seach-form">搜索框</div>
     <a-switch v-model:checked="checked"></a-switch>
     <kd-color-picker v-model:pureColor="color"></kd-color-picker>
   </div>
@@ -24,7 +24,6 @@
   import { Switch as ASwitch } from 'ant-design-vue'
   import { ref, watch } from 'vue'
   import { changeTheme, dynamicTheme } from '../../src/assets/style'
-  import './style'
 
   const checked = ref<boolean>(false)
   const color = ref<string>('#512da7')

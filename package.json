@@ -32,6 +32,7 @@
   "homepage": "https://github.com/sfeer/kd",
   "license": "MIT",
   "dependencies": {
+    "@ant-design/icons-vue": "6",
     "ant-design-vue": "3",
     "axios": "0",
     "vue": "3",
