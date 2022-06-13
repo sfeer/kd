@@ -1,14 +1,43 @@
-.kd-menu-module {
+@import '../../style/variables';
+
+.kd-menu-sys {
   text-align: center;
   height: 66px;
   margin-top: 15px;
   padding: 10px;
 
   &.active {
-    background-color: red;
+    background-color: @primary-color-active;
   }
 }
 
-.kd-menu-module-icon {
+.kd-menu-sys-icon {
   font-size: 1.5rem;
+}
+
+.kd-menu-mod {
+  padding: 12px 20px;
+}
+
+.kd-menu-mod-header {
+  display: flex;
+  align-items: center;
+
+  .kd-menu-mod-icon {
+    font-size: 16px;
+    color: @primary-color;
+    margin-right: 8px;
+  }
+}
+
+.kd-menu-func-wrapper {
+  margin-left: 25px;
+  display: flex;
+  flex-wrap: wrap;
+}
+
+.kd-menu-func {
+  margin-top: 12px;
+  width: 33.33%;
+  color: #999;
 }

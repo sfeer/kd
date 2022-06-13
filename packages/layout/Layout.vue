@@ -26,7 +26,7 @@
   import { changeTheme, dynamicTheme } from '../../src/assets/style'
 
   const checked = ref<boolean>(false)
-  const color = ref<string>('#512da7')
+  const color = ref<string>('#005ca7')
 
   watch([color, checked], ([v, x]) => {
     dynamicTheme({ 'primary-color': v })
