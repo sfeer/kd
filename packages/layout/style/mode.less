@@ -1,0 +1,35 @@
+@import (reference) '../../style/variables';
+
+// 经典布局模式
+.kd-layout.classic {
+  --@{kd-prefix}-header-height: 64px;
+
+  .kd-header {
+    left: 0;
+    background-color: @primary-color;
+    color: white;
+  }
+
+  .kd-content {
+    left: 0;
+  }
+
+  .kd-logo {
+    width: 120px;
+    font-size: 20px;
+  }
+
+  .kd-title {
+    flex: none;
+    width: 150px;
+  }
+
+  .kd-seach-form {
+    border-radius: 30px;
+  }
+
+  .kd-menu-sys-wrapper {
+    flex: auto;
+    display: flex;
+  }
+}

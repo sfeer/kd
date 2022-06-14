@@ -1,13 +1,15 @@
 <template>
-  <div
-    class="kd-menu-sys"
-    :class="{ active: activeSys === sys.id }"
-    v-for="sys in menu"
-    :key="sys.id"
-    @click="clickMenu(sys.id)"
-  >
-    <kd-icon class="kd-menu-sys-icon" :type="`icon-${sys.icon}`"></kd-icon>
-    <div>{{ sys.name }}</div>
+  <div class="kd-menu-sys-wrapper">
+    <div
+      class="kd-menu-sys"
+      :class="{ active: activeSys === sys.id }"
+      v-for="sys in menu"
+      :key="sys.id"
+      @click="clickMenu(sys.id)"
+    >
+      <kd-icon class="kd-menu-sys-icon" :type="`icon-${sys.icon}`"></kd-icon>
+      <div>{{ sys.name }}</div>
+    </div>
   </div>
   <div class="kd-menu-mod-wrapper" v-if="modules">
     <div class="kd-menu-mod" v-for="mod in modules" :key="mod.id">
