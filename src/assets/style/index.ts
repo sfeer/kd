@@ -27,6 +27,6 @@ export function dynamicTheme(variables: Record<string, string> = {}) {
   newDom.id = 'kd-dynamic-theme'
   newDom.innerHTML = `:root {${Object.keys(variables)
     .map(key => `--kd-${key}: ${variables[key]};`)
-    .join()}}`
+    .join('')}}`
   head.appendChild(newDom)
 }

@@ -24,12 +24,18 @@
   import { Switch as ASwitch } from 'ant-design-vue'
   import { ref, watch } from 'vue'
   import { changeTheme, dynamicTheme } from '../../src/assets/style'
+  import Color from 'color'
 
+  const props = defineProps({ mode: String, theme: String })
   const checked = ref<boolean>(false)
   const color = ref<string>('#005ca7')
 
+  watch(
+    () => props.theme,
+    v => changeTheme(v)
+  )
   watch([color, checked], ([v, x]) => {
-    dynamicTheme({ 'primary-color': v })
+    dynamicTheme({ 'primary-color': v, 'primary-color-active': Color(v).darken(0.4).hex() })
     changeTheme(x ? 'dark' : undefined)
   })
 </script>
