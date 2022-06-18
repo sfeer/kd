@@ -1,6 +1,41 @@
 @import (reference) '../../style/variables';
 
-// 经典布局模式
+/* 默认布局模式 */
+.kd-layout.default {
+  // 菜单
+  .kd-menu-sys {
+    margin-top: 15px;
+    height: 64px;
+  }
+
+  .kd-menu-mod-wrapper {
+    position: fixed;
+    top: @header-height;
+    left: @sider-width;
+    bottom: 0;
+    width: 400px;
+    overflow-y: auto;
+    box-shadow: 4px 0 4px 0 rgba(0, 0, 0, 0.05), 4px 2px 8px 0 rgba(0, 0, 0, 0.04);
+  }
+
+  .kd-menu-mod {
+    padding: 12px 20px;
+  }
+
+  .kd-menu-func-wrapper {
+    margin-left: 25px;
+    display: flex;
+    flex-wrap: wrap;
+  }
+
+  .kd-menu-func {
+    margin-top: 12px;
+    width: 33.33%;
+    color: #999;
+  }
+}
+
+/* 经典布局模式 */
 .kd-layout.classic {
   --@{kd-prefix}-header-height: 64px;
 
@@ -28,8 +63,37 @@
     border-radius: 30px;
   }
 
+  // 菜单
   .kd-menu-sys-wrapper {
     flex: auto;
     display: flex;
+    height: @header-height;
+  }
+
+  .kd-menu-sys {
+    width: 74px;
+    height: @header-height;
+  }
+
+  .kd-menu-mod-wrapper {
+    position: fixed;
+    left: 0;
+    right: 0;
+    top: @header-height;
+    height: 400px;
+    display: flex;
+    flex-flow: column wrap;
+    align-content: center;
+    box-shadow: 0 6px 12px 0 rgba(0, 0, 0, 0.16);
+  }
+
+  .kd-menu-mod {
+    width: 180px;
+    margin-top: 25px;
+  }
+
+  .kd-menu-func {
+    margin-top: 12px;
+    color: #999;
   }
 }

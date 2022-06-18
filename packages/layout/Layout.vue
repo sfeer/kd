@@ -1,5 +1,6 @@
 <template>
   <div class="kd-layout" :class="mode">
+    <div class="kd-content"><slot></slot></div>
     <div class="kd-header">
       <div class="kd-logo" v-if="mode === 'classic'">LOGO</div>
       <div class="kd-title">XXXX系统</div>
@@ -9,7 +10,6 @@
       <a-switch v-model:checked="theme" checked-value="dark" un-checked-value="default"></a-switch>
       <kd-color-picker v-model:pureColor="color"></kd-color-picker>
     </div>
-    <div class="kd-content"><slot></slot></div>
     <div class="kd-sider" v-if="mode === 'default'">
       <div class="kd-logo">LOGO</div>
       <kd-menu></kd-menu>

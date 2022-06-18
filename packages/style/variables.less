@@ -6,7 +6,9 @@
   --@{kd-prefix}-primary-color: @base-primary;
   --@{kd-prefix}-primary-color-active: darken(@base-primary, 20%);
   --@{kd-prefix}-bg-color: #eee;
+  --@{kd-prefix}-bg-color-pro: #fff;
   --@{kd-prefix}-text-color: #333;
+  --@{kd-prefix}-text-color-lite: #666;
   --@{kd-prefix}-header-height: 48px;
   --@{kd-prefix}-sider-width: 72px;
 }
@@ -14,12 +16,16 @@
 // 深色模式
 [data-theme='dark'] {
   --@{kd-prefix}-bg-color: #333;
-  --@{kd-prefix}-text-color: #ccc;
+  --@{kd-prefix}-bg-color-pro: #222;
+  --@{kd-prefix}-text-color: #eee;
+  --@{kd-prefix}-text-color-lite: #bbb;
 }
 
 @bg-color: ~'var(--@{kd-prefix}-bg-color)';
+@bg-color-pro: ~'var(--@{kd-prefix}-bg-color-pro)';
 @primary-color: ~'var(--@{kd-prefix}-primary-color)';
 @primary-color-active: ~'var(--@{kd-prefix}-primary-color-active)';
 @text-color: ~'var(--@{kd-prefix}-text-color)';
+@text-color-lite: ~'var(--@{kd-prefix}-text-color-lite)';
 @header-height: ~'var(--@{kd-prefix}-header-height)';
 @sider-width: ~'var(--@{kd-prefix}-sider-width)';
