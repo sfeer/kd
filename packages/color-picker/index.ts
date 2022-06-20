@@ -1,5 +1,5 @@
 import { App, Plugin } from 'vue'
-import ColorPicker from './src/index.vue'
+import ColorPicker from './ColorPicker.vue'
 
 export const ColorPickerPlugin: Plugin = {
   install(app: App) {
