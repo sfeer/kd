@@ -1,6 +1,6 @@
 {
   "name": "@sfeer/kd",
-  "version": "0.2.5",
+  "version": "0.2.6",
   "description": "看到，基于ant-design-vue的二次封装",
   "scripts": {
     "dev": "vite --config ./build/base.config.ts",
@@ -20,7 +20,8 @@
     ".": {
       "import": "./dist/kd.es.js",
       "require": "./dist/kd.umd.js"
-    }
+    },
+    "./*": "./*"
   },
   "keywords": [
     "vue3",
