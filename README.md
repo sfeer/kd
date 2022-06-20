@@ -8,26 +8,18 @@
 
 </div>
 
+## 待办
+
 相关文档后期需要整理到 docs 中
 
 corepack prepare yarn @x.y.z --activate
 
 页面风格样式需要内置3套，科技、简约、国风
 
-## 待办
-
-github工作流   npm发布   开发文档
-
 ## 发布 npm
 
 ```
-npm help config
-npm config set [registry]
-npm config get [registry]
-npm config ls -l
-
-npm publish
-npm unpublish XXX --force
+npm publish --registry https://registry.npmjs.org/
 ```
 
 ## 数据牌
