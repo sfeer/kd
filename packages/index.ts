@@ -1,5 +1,4 @@
 import { App, Plugin } from 'vue'
-
 import { ColorPickerPlugin } from './color-picker'
 import { IconPlugin } from './icon'
 import { ImagePlugin } from './image'
