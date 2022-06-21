@@ -4,7 +4,8 @@
 
 :root {
   --@{kd-prefix}-primary-color: @base-primary;
-  --@{kd-prefix}-primary-color-active: darken(@base-primary, 20%);
+  --@{kd-prefix}-primary-color-hover: lighten(@base-primary, 15%);
+  --@{kd-prefix}-primary-color-active: darken(@base-primary, 15%);
   --@{kd-prefix}-bg-color: #eee;
   --@{kd-prefix}-bg-color-pro: #fff;
   --@{kd-prefix}-text-color: #333;
@@ -24,6 +25,7 @@
 @bg-color: ~'var(--@{kd-prefix}-bg-color)';
 @bg-color-pro: ~'var(--@{kd-prefix}-bg-color-pro)';
 @primary-color: ~'var(--@{kd-prefix}-primary-color)';
+@primary-color-hover: ~'var(--@{kd-prefix}-primary-color-hover)';
 @primary-color-active: ~'var(--@{kd-prefix}-primary-color-active)';
 @text-color: ~'var(--@{kd-prefix}-text-color)';
 @text-color-lite: ~'var(--@{kd-prefix}-text-color-lite)';
