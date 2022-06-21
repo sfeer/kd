@@ -2,7 +2,7 @@ import { App, Plugin } from 'vue'
 import { createFromIconfontCN } from '@ant-design/icons-vue'
 
 const Icon = createFromIconfontCN({
-  scriptUrl: '//at.alicdn.com/t/font_3057024_movvrvyx26g.js',
+  scriptUrl: '/font/iconfont.js',
 })
 
 export const IconPlugin: Plugin = {

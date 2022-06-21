@@ -5,7 +5,6 @@ import { IconPlugin } from './icon'
 import { ImagePlugin } from './image'
 import { LayoutPlugin } from './layout'
 import { MenuPlugin } from './menu'
-import './style'
 
 const KdPlugin: Plugin = {
   install(app: App) {
