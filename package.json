@@ -1,12 +1,12 @@
 {
   "name": "@sfeer/kd",
-  "version": "0.3.2",
+  "version": "0.3.5",
   "description": "看到，基于ant-design-vue的二次封装",
   "scripts": {
     "dev": "vite --config ./build/base.config.ts",
     "docs:build": "vue-tsc --noEmit && vite build --config build/docs.config.ts",
     "lib:build": "vue-tsc --noEmit && vite build --config ./build/lib.config.ts",
-    "publish": "npm publish --registry https://registry.npmjs.org/"
+    "pub": "npm publish --registry https://registry.npmjs.org/"
   },
   "repository": {
     "type": "git",
@@ -49,7 +49,6 @@
     "typescript": "4",
     "vite": "2",
     "vite-plugin-dts": "1",
-    "vite-plugin-md": "0",
     "vue-tsc": "0"
   }
 }
