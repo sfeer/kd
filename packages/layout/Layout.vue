@@ -6,7 +6,7 @@
       <div class="kd-title">XXXX系统</div>
       <kd-menu v-if="mode === 'classic'" :data="menu"></kd-menu>
       <div class="kd-seach-form">搜索框</div>
-      <kd-icon class="kd-theme-icon" type="icon-home" @click="openModal"></kd-icon>
+      <kd-icon class="kd-theme-icon" type="icon-yifu" @click="openModal"></kd-icon>
       <a-modal v-model:visible="visible" title="定制主题" :footer="null">
         <a-switch v-model:checked="mode" checked-value="classic" un-checked-value="default"></a-switch>
         <a-switch v-model:checked="theme" checked-value="dark" un-checked-value="default"></a-switch>
@@ -27,7 +27,7 @@
   import Color from 'color'
   import { MenuItem } from '../menu/menuTypes'
 
-  const props = defineProps({ menu: Array as PropType<MenuItem[]> })
+  defineProps({ menu: Array as PropType<MenuItem[]> })
 
   const visible = ref<boolean>(false)
   const mode = ref<string>('default')
