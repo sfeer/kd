@@ -3,7 +3,7 @@
     <div class="kd-content"><slot></slot></div>
     <div class="kd-header">
       <div class="kd-logo" v-if="mode === 'classic'">LOGO</div>
-      <div class="kd-title">XXXX系统</div>
+      <div class="kd-title">{{ title }}</div>
       <kd-menu v-if="mode === 'classic'" :data="menu"></kd-menu>
       <div class="kd-seach-form">搜索框</div>
       <kd-icon class="kd-theme-icon" type="icon-yifu" @click="openModal"></kd-icon>
@@ -27,7 +27,7 @@
   import Color from 'color'
   import { MenuItem } from '../menu/menuTypes'
 
-  defineProps({ menu: Array as PropType<MenuItem[]> })
+  defineProps({ title: String, menu: Array as PropType<MenuItem[]> })
 
   const visible = ref<boolean>(false)
   const mode = ref<string>('default')

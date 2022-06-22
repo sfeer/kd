@@ -1,5 +1,5 @@
 <template>
-  <kd-layout :menu="menu">
+  <kd-layout title="XXXX系统" :menu="menu">
     <router-view></router-view>
   </kd-layout>
 </template>
