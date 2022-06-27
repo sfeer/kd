@@ -10,15 +10,18 @@
 
 ## 待办
 
-相关文档后期需要整理到 docs 中
+菜单支持url或者动态组件, 顶部菜单弹出样式需要调整
 
-corepack prepare yarn @x.y.z --activate
+相关文档后期需要整理到 docs 中
 
 页面风格样式需要内置3套，科技、简约、国风
 
 ## 发布 npm
 
 ```
+// yarn安装
+corepack prepare yarn @x.y.z --activate
+// npm发布
 npm publish --registry https://registry.npmjs.org/
 ```
 
