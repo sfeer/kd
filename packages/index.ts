@@ -4,6 +4,7 @@ import { IconPlugin } from './icon'
 import { ImagePlugin } from './image'
 import { LayoutPlugin } from './layout'
 import { MenuPlugin } from './menu'
+import { RtePlugin } from './rte'
 
 const KdPlugin: Plugin = {
   install(app: App) {
@@ -12,6 +13,7 @@ const KdPlugin: Plugin = {
     ImagePlugin.install?.(app)
     LayoutPlugin.install?.(app)
     MenuPlugin.install?.(app)
+    RtePlugin.install?.(app)
   },
 }
 

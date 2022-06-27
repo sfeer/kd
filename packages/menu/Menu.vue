@@ -18,7 +18,9 @@
         <div>{{ mod.name }}</div>
       </div>
       <div class="kd-menu-func-wrapper">
-        <div class="kd-menu-func" v-for="func in mod.child" :key="func.id">{{ func.name }}</div>
+        <div class="kd-menu-func" v-for="func in mod.child" :key="func.id" @click="clickFunc(func)">
+          {{ func.name }}
+        </div>
       </div>
     </div>
   </div>
@@ -27,12 +29,19 @@
 <script setup lang="ts">
   import { computed, PropType, ref } from 'vue'
   import { MenuItem } from './menuTypes'
+  import { useRoute, useRouter } from 'vue-router'
 
   const props = defineProps({ data: Array as PropType<MenuItem[]> })
-
   const activeSys = ref('')
   const modules = computed(() => props.data?.find(m => m.id === activeSys.value)?.child)
+
   function clickMenu(v: string) {
-    activeSys.value = v
+    activeSys.value = activeSys.value === v ? '' : v
+  }
+
+  function clickFunc(v: MenuItem) {
+    // TODO 外链
+    // 路由
+    v.url && useRouter().push(v.url)
   }
 </script>
