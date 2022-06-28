@@ -70,7 +70,28 @@
         },
       ],
     },
-    { id: '2', name: '组件', icon: 'setting' },
+    {
+      id: '2',
+      name: '组件',
+      icon: 'setting',
+      child: [
+        {
+          id: '21',
+          name: '通用',
+          icon: 'news',
+          child: [{ id: '211', name: '按钮', url: '/comp/common/btn' }],
+        },
+        {
+          id: '22',
+          name: '表单',
+          icon: 'news',
+          child: [
+            { id: '221', name: '输入框', url: '/comp/form/input' },
+            { id: '222', name: '颜色选择框', url: '/comp/form/color-picker' },
+          ],
+        },
+      ],
+    },
     { id: '3', name: '场景', icon: 'setting' },
     { id: '4', name: '联系', icon: 'setting' },
   ])

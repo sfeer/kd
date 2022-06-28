@@ -5,10 +5,10 @@ export default defineConfig({
   css: {
     preprocessorOptions: {
       less: {
-        javascriptEnabled: true,
-      },
-    },
+        javascriptEnabled: true
+      }
+    }
   },
 
-  plugins: [vue()],
+  plugins: [vue()]
 })

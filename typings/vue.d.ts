@@ -11,3 +11,5 @@ declare module '*.md' {
 }
 
 declare module 'color'
+
+declare module 'lodash-es'
