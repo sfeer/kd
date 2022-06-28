@@ -29,15 +29,12 @@
 <script setup lang="ts">
   import { computed, PropType, ref } from 'vue'
   import { MenuItem } from './menuTypes'
-  import { useRouter, addRouters } from './hooks/useRouter'
-  import '../../src/views/comp/common/Btn.vue'
+  import { useRouter } from 'vue-router'
 
+  const router = useRouter()
   const props = defineProps({ data: Array as PropType<MenuItem[]> })
   const activeSys = ref('')
   const modules = computed(() => props.data?.find(m => m.id === activeSys.value)?.child)
-
-  const router = useRouter()
-  addRouters(props.data, router)
 
   function clickMenu(v: string) {
     activeSys.value = activeSys.value === v ? '' : v
