@@ -15,10 +15,10 @@
     <div class="kd-menu-mod" v-for="mod in modules" :key="mod.id">
       <div class="kd-menu-mod-header">
         <kd-icon class="kd-menu-mod-icon" :type="`icon-${mod.icon}`"></kd-icon>
-        <div>{{ mod.name }}</div>
+        <div @click="clickMenuItem(mod)">{{ mod.name }}</div>
       </div>
       <div class="kd-menu-func-wrapper">
-        <div class="kd-menu-func" v-for="func in mod.child" :key="func.id" @click="clickFunc(func)">
+        <div class="kd-menu-func" v-for="func in mod.child" :key="func.id" @click="clickMenuItem(func)">
           {{ func.name }}
         </div>
       </div>
@@ -29,10 +29,9 @@
 <script setup lang="ts">
   import { computed, PropType, ref } from 'vue'
   import { MenuItem } from './menuTypes'
-  import { useRouter } from 'vue-router'
 
-  const router = useRouter()
   const props = defineProps({ data: Array as PropType<MenuItem[]> })
+  const emit = defineEmits(['click'])
   const activeSys = ref('')
   const modules = computed(() => props.data?.find(m => m.id === activeSys.value)?.child)
 
@@ -40,8 +39,8 @@
     activeSys.value = activeSys.value === v ? '' : v
   }
 
-  function clickFunc(v: MenuItem) {
-    v.url && router.push(v.url)
+  function clickMenuItem(v: MenuItem) {
+    emit('click', v)
     activeSys.value = ''
   }
 </script>

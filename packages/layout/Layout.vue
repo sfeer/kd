@@ -4,7 +4,7 @@
     <div class="kd-header">
       <div class="kd-logo" v-if="mode === 'classic'">LOGO</div>
       <div class="kd-title">{{ title }}</div>
-      <kd-menu v-if="mode === 'classic'" :data="menu"></kd-menu>
+      <kd-menu v-if="mode === 'classic'" :data="menu" @click="$emit('clickMenu')"></kd-menu>
       <div class="kd-seach-form">搜索框</div>
       <kd-icon class="kd-theme-icon" type="icon-yifu" @click="openModal"></kd-icon>
       <a-modal v-model:visible="visible" title="定制主题" :footer="null">
@@ -15,7 +15,7 @@
     </div>
     <div class="kd-sider" v-if="mode === 'default'">
       <div class="kd-logo">LOGO</div>
-      <kd-menu :data="menu"></kd-menu>
+      <kd-menu :data="menu" @click="$emit('clickMenu')"></kd-menu>
     </div>
   </div>
 </template>
