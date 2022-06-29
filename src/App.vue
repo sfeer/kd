@@ -1,11 +1,16 @@
 <template>
-  <kd-layout title="XXXX系统" :menu="menu">
+  <kd-layout title="XXXX系统" :menu="menu" @clickMenu="clickMenu">
     <router-view></router-view>
   </kd-layout>
 </template>
 
 <script setup lang="ts">
   import { ref } from 'vue'
+  import { RouteLocationRaw, useRouter } from 'vue-router'
+  import { camelCase, upperFirst } from 'lodash-es'
+  import { MenuItem } from '../packages/menu/menuTypes'
+
+  const router = useRouter()
 
   const menu = ref([
     {
@@ -95,4 +100,24 @@
     { id: '3', name: '场景', icon: 'setting' },
     { id: '4', name: '联系', icon: 'setting' },
   ])
+  const modules = import.meta.glob('/src/views/**/*.vue')
+  function addRouters(tree: MenuItem[]) {
+    tree.forEach(v => {
+      if (v.child) {
+        addRouters(v.child)
+      } else if (v.url) {
+        const tmp = v.url.split('/')
+        const file = upperFirst(camelCase(tmp.pop()))
+        router.addRoute({
+          path: v.url,
+          component: modules[`/src/views${tmp.join('/')}/${file}.vue`],
+          meta: { title: v.name },
+        })
+      }
+    })
+  }
+  addRouters(menu.value)
+  function clickMenu(v: { url: RouteLocationRaw }) {
+    v.url && router.push(v.url)
+  }
 </script>
