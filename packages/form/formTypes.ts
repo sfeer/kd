@@ -2,7 +2,9 @@ export interface FormItemModel {
   id: string
   name: string
   type: FormItemType
-  prop?: object
+  mode?: string
+  format?: string
+  props?: object
   data?: object[]
 }
 
