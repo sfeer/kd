@@ -88,12 +88,22 @@
         },
         {
           id: '22',
+          name: '集合',
+          icon: 'news',
+          child: [
+            { id: '221', name: '表格', url: '/comp/set/table' },
+            { id: '222', name: '列表', url: '/comp/set/list' },
+            { id: '223', name: '卡片', url: '/comp/set/card' },
+          ],
+        },
+        {
+          id: '23',
           name: '表单',
           icon: 'news',
           child: [
-            { id: '221', name: '表单', url: '/comp/form/form' },
-            { id: '222', name: '输入框', url: '/comp/form/input' },
-            { id: '223', name: '颜色选择框', url: '/comp/form/color-picker' },
+            { id: '231', name: '表单', url: '/comp/form/form' },
+            { id: '232', name: '输入框', url: '/comp/form/input' },
+            { id: '233', name: '颜色选择框', url: '/comp/form/color-picker' },
           ],
         },
       ],

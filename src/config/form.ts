@@ -1,6 +1,10 @@
 export const userLayout = [
+  '基本信息',
   ['name', 'oldName', 'sex', 'birthday'],
   ['country', 'nationCode', 'birthArea', 'educationCode'],
+  '人事信息',
+  ['start', 'end'],
+  ['attach'],
   ['politicCode', 'sort', 'cerType', 'cerNumber'],
   ['photo', '', '', ''],
 ]
@@ -27,4 +31,7 @@ export const userModel = [
   { id: 'cerType', name: '证件类型' },
   { id: 'cerNumber', name: '证件号码' },
   { id: 'photo', name: '头像' },
+  { id: 'start', name: '开始时间' },
+  { id: 'end', name: '结束时间' },
+  { id: 'attach', name: '附件' },
 ]
