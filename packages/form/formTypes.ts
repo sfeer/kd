@@ -5,7 +5,7 @@ export interface FormItemModel {
   mode?: string
   format?: string
   props?: object
-  data?: object[]
+  data?: { id: string; name: string }[]
 }
 
 export type FormItemType = 'input' | 'number' | 'checkbox' | 'radio' | 'password' | 'select' | 'date' | 'textarea'

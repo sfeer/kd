@@ -8,6 +8,7 @@
     "jsx": "preserve",
     "sourceMap": true,
     "resolveJsonModule": true,
+    "noImplicitAny": false,
     "baseUrl": "./",
     // 将每个文件作为单独模块，默认false
     "isolatedModules": true,

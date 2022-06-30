@@ -20,7 +20,7 @@
               :get-popup-container="triggerNode => triggerNode.parentNode"
               :placeholder="`请选择${map[col].name}`"
               v-model="vv[col]"
-              :options="map[col].data.map(x => ({ value: x.id, label: x.name }))"
+              :options="map[col].data?.map(x => ({ value: x.id, label: x.name }))"
             ></a-select>
             <a-date-picker
               v-else-if="map[col].type === 'date'"
@@ -47,7 +47,7 @@
     wrapperCol: { type: Object as PropType<ColProps & HTMLAttributes>, default: { flex: 'auto' } },
     model: { type: Array as PropType<FormItemModel[]>, required: true },
     layout: Array as PropType<(string | string[])[]>,
-    modelValue: Object,
+    modelValue: { type: Object, default: {} },
   })
   const emit = defineEmits(['update:modelValue'])
 
