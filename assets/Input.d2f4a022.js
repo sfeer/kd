@@ -1,1 +1,0 @@
-import{_ as o,r as n,o as r,d as t}from"./index.9d0d1f55.js";const c={};function a(_,s){const e=n("a-input");return r(),t(e,{placeholder:"\u8BF7\u8F93\u5165\u540D\u79F0"})}var f=o(c,[["render",a]]);export{f as default};
