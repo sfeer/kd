@@ -1,3 +1,3 @@
 <template>
-  <a-table></a-table>
+  <kd-table></kd-table>
 </template>
