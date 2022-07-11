@@ -5,7 +5,7 @@
   height: @header-height;
   left: @sider-width;
   right: 0;
-  background-color: white;
+  background-color: @bg-color-pro;
   display: flex;
   align-items: center;
 
@@ -27,11 +27,13 @@
 }
 
 .kd-content {
+  color: @text-color;
   position: fixed;
   top: @header-height;
   left: @sider-width;
   right: 0;
   bottom: 0;
+  padding: 15px;
 }
 
 .kd-logo {

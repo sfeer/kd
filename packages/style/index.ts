@@ -5,6 +5,8 @@ import './index.less'
  * @param theme
  */
 export function changeTheme(theme: string = 'default') {
+  const dom = document.getElementById('antd-theme')
+  dom?.setAttribute('href', `/antd/${theme}.css`)
   switch (theme) {
     case 'default':
       // 浅色模式-默认

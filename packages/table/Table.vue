@@ -5,15 +5,16 @@
       <div v-if="title" class="title">{{ title }}</div>
     </div>
     <a-table
-      class="kd-table"
       :data-source="data"
       :row-key="config.rowKey"
-      :columns="config.columns"
+      :columns="columns"
       :pagination="pagination"
       @change="handleChange"
+      @resize-column="handleResizeColumn"
+      :row-selection="{}"
     >
-      <template #[item]="text, record" v-for="item in Object.keys($slots)">
-        <slot :name="item" v-bind="record"></slot>
+      <template #[item]="cell" v-for="item in Object.keys($slots)">
+        <slot :name="item" v-bind="cell"></slot>
       </template>
     </a-table>
   </div>
@@ -32,9 +33,11 @@
   const data = ref()
   const searchData = ref()
   const pagination = ref()
+  const columns = ref()
 
   // searchData.value = props.config?.searchData
   pagination.value = props.config?.pagination
+  columns.value = props.config?.columns.map(v => ({ ellipsis: true, resizable: v.width, ...v }))
   doLoad()
 
   function doLoad() {
@@ -47,5 +50,9 @@
   function handleChange(v) {
     pagination.value = v
     doLoad()
+  }
+
+  function handleResizeColumn(w, col) {
+    col.width = w
   }
 </script>

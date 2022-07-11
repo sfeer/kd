@@ -1,16 +1,23 @@
 <template>
-  <kd-layout title="XXXX系统" :menu="menu" @clickMenu="clickMenu">
-    <router-view></router-view>
-  </kd-layout>
+  <a-config-provider :locale="zhCN" :get-popup-container="getPopupContainer">
+    <kd-layout title="XXXX系统" :menu="menu" @clickMenu="clickMenu">
+      <router-view></router-view>
+    </kd-layout>
+  </a-config-provider>
 </template>
 
 <script setup lang="ts">
+  import zhCN from 'ant-design-vue/es/locale/zh_CN'
   import { ref } from 'vue'
   import { RouteLocationRaw, useRouter } from 'vue-router'
   import { camelCase, upperFirst } from 'lodash-es'
   import { MenuItem } from '../packages/menu/menuTypes'
 
   const router = useRouter()
+
+  function getPopupContainer(triggerNode) {
+    return triggerNode ? triggerNode.parentNode : document.body
+  }
 
   const menu = ref([
     {

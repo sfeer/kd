@@ -1,7 +1,7 @@
-import { GetRowKey, ColumnType, TablePaginationConfig } from 'ant-design-vue/es/table/interface'
+import type { TableColumnsType, TablePaginationConfig } from 'ant-design-vue'
 
 export interface TableConfig {
-  rowKey: string | GetRowKey<any>
-  columns: ColumnType
+  rowKey: string
+  columns: TableColumnsType
   pagination: TablePaginationConfig
 }

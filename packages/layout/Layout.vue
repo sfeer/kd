@@ -44,6 +44,9 @@
       '--ant-primary-color': v,
       '--ant-primary-color-hover': color.lighten(0.3).hex(),
       '--ant-primary-color-active': color.darken(0.3).hex(),
+      '--ant-primary-color-active-deprecated-d-02':color.lighten(0.7).hex(),
+      '--ant-primary-1': color.lighten(0.9).hex(),
+      '--ant-primary-9': color.darken(0.9).hex(),
     })
   })
 
