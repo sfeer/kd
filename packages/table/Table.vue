@@ -1,6 +1,6 @@
 <template>
   <div class="kd-table">
-    <!--搜索表单-->
+    <kd-search-form v-model='searchData' :model='config.search'></kd-search-form>
     <div class="header">
       <div v-if="title" class="title">{{ title }}</div>
     </div>
@@ -31,11 +31,10 @@
   })
 
   const data = ref()
-  const searchData = ref()
+  const searchData = ref({})
   const pagination = ref()
   const columns = ref()
 
-  // searchData.value = props.config?.searchData
   pagination.value = props.config?.pagination
   columns.value = props.config?.columns.map(v => ({ ellipsis: true, resizable: v.width, ...v }))
   doLoad()

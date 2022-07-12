@@ -1,0 +1,27 @@
+.kd-search-form {
+  border-radius: 5px;
+  position: relative;
+  padding: 15px;
+  background-color: white;
+  margin-bottom: 15px;
+
+  .btns {
+    text-align: center;
+
+    button {
+      margin: 0 5px;
+    }
+  }
+
+  &.collapsed {
+    .btns {
+      position: absolute;
+      top: 15px;
+      right: 15px;
+    }
+
+    .ant-form-item {
+      margin-bottom: 0;
+    }
+  }
+}

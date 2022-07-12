@@ -1,5 +1,9 @@
 <template>
-  <kd-form v-model="formData" :model="userModel" :layout="userLayout"></kd-form>
+  <kd-form v-model="formData" :model="userModel" :layout="userLayout">
+    <template #group="{row}">
+      id={{row.id}},name={{row.name}}
+    </template>
+  </kd-form>
 </template>
 
 <script setup lang="ts">

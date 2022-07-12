@@ -1,8 +1,8 @@
 export const userLayout = [
-  '基本信息',
+  { id: 1, name: '基本信息' },
   ['name', 'oldName', 'sex', 'birthday'],
   ['country', 'nationCode', 'birthArea', 'educationCode'],
-  '人事信息',
+  { id: 2, name: '人事信息' },
   ['start', 'end'],
   ['attach'],
   ['politicCode', 'sort', 'cerType', 'cerNumber'],
@@ -34,4 +34,15 @@ export const userModel = [
   { id: 'start', name: '开始时间' },
   { id: 'end', name: '结束时间' },
   { id: 'attach', name: '附件' },
+]
+
+export const appSearchModel = [
+  { id: 'name', name: '应用名称' },
+  { id: 'startTime', name: '开始时间' },
+  { id: 'endTime', name: '结束时间' },
+  { id: 'type', name: '应用类型' },
+  { id: 'group', name: '应用分组' },
+  { id: 'status', name: '应用状态' },
+  { id: 'manager', name: '负责人' },
+  { id: 'isMicro', name: '是否微应用' },
 ]

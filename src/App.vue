@@ -109,8 +109,9 @@
           icon: 'news',
           child: [
             { id: '231', name: '表单', url: '/comp/form/form' },
-            { id: '232', name: '输入框', url: '/comp/form/input' },
-            { id: '233', name: '颜色选择框', url: '/comp/form/color-picker' },
+            { id: '232', name: '搜索表单', url: '/comp/form/search-form' },
+            { id: '233', name: '输入框', url: '/comp/form/input' },
+            { id: '234', name: '颜色选择框', url: '/comp/form/color-picker' },
           ],
         },
       ],

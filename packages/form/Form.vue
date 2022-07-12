@@ -1,37 +1,21 @@
 <template>
   <a-form class="kd-form" :model="vv" :label-col="labelCol" :wrapper-col="wrapperCol">
-    <a-row v-for="(row, i) in layout" :key="`row-${i}`" type="flex">
-      <template v-if="Array.isArray(row)">
-        <a-col v-for="(col, j) in row" flex="1 1 0" :key="`col-${j}`">
-          <a-form-item v-if="col" :label="map[col].name">
-            <a-input
-              v-if="!map[col].type"
-              v-model:value="vv[col]"
-              :placeholder="`请选择${map[col].name}`"
-              v-bind="map[col].props"
-            ></a-input>
-            <a-input-number
-              v-else-if="map[col].type === 'number'"
-              v-model="vv[col]"
-              v-bind="map[col].props"
-            ></a-input-number>
-            <a-select
-              v-else-if="map[col].type === 'select'"
-              :placeholder="`请选择${map[col].name}`"
-              v-model="vv[col]"
-              :options="map[col].data?.map(x => ({ value: x.id, label: x.name }))"
-            ></a-select>
-            <a-date-picker
-              v-else-if="map[col].type === 'date'"
-              :valueFormat="map[col].format"
-              style="width: 100%"
-              :placeholder="`请选择${map[col].name}`"
-              v-model="vv[col]"
-            ></a-date-picker>
-          </a-form-item>
-        </a-col>
-      </template>
-      <div v-else class="kd-form-group">{{ row }}</div>
+    <template v-if="layout">
+      <a-row v-for="(row, i) in layout" :key="`row-${i}`" type="flex">
+        <template v-if="Array.isArray(row)">
+          <a-col v-for="(col, j) in row" flex="1 1 0" :key="`col-${j}`">
+            <kd-form-item v-if="col" v-model="vv[col]" :model="map[col]"></kd-form-item>
+          </a-col>
+        </template>
+        <div v-else class="kd-form-group">
+          <slot name="group" :row="row">{{ row }}</slot>
+        </div>
+      </a-row>
+    </template>
+    <a-row v-else>
+      <a-col v-for="(v, k) in map" :span="6" :key="k">
+        <kd-form-item v-model="vv[k]" :model="v"></kd-form-item>
+      </a-col>
     </a-row>
   </a-form>
 </template>
