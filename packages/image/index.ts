@@ -6,5 +6,3 @@ export const ImagePlugin: Plugin = {
     app.component('kd-image', Image)
   },
 }
-
-export { Image }

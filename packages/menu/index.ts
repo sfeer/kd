@@ -29,5 +29,3 @@ export function generateRoutes(tree: MenuItem[]): RouteRecordRaw[] {
   })
   return res
 }
-
-export { Menu }

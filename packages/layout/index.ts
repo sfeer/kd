@@ -7,5 +7,3 @@ export const LayoutPlugin: Plugin = {
     app.component('kd-layout', Layout)
   },
 }
-
-export { Layout }

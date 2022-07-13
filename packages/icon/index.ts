@@ -10,5 +10,3 @@ export const IconPlugin: Plugin = {
     app.component('kd-icon', Icon)
   },
 }
-
-export { Icon }

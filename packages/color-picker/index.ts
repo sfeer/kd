@@ -6,5 +6,3 @@ export const ColorPickerPlugin: Plugin = {
     app.component('kd-color-picker', ColorPicker)
   },
 }
-
-export { ColorPicker }

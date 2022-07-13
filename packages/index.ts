@@ -4,7 +4,7 @@ import { FormPlugin } from './form'
 import { IconPlugin } from './icon'
 import { ImagePlugin } from './image'
 import { LayoutPlugin } from './layout'
-import { MenuPlugin } from './menu'
+import { generateRoutes, MenuPlugin } from './menu'
 import { RtePlugin } from './rte'
 import { TablePlugin } from './table'
 
@@ -20,5 +20,7 @@ const KdPlugin: Plugin = {
     TablePlugin.install?.(app)
   },
 }
+
+export { generateRoutes }
 
 export default KdPlugin

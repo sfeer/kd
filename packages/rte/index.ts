@@ -7,5 +7,3 @@ export const RtePlugin: Plugin = {
     app.component('kd-rte', Rte)
   },
 }
-
-export { Rte }
