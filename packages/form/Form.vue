@@ -4,7 +4,7 @@
       <a-row v-for="(row, i) in layout" :key="`row-${i}`" type="flex">
         <template v-if="Array.isArray(row)">
           <a-col v-for="(col, j) in row" flex="1 1 0" :key="`col-${j}`">
-            <kd-form-item v-if="col" v-model="vv[col]" :model="map[col]"></kd-form-item>
+            <kd-form-item v-if="col && map[col]" v-model="vv[col]" :model="map[col]"></kd-form-item>
           </a-col>
         </template>
         <div v-else class="kd-form-group">

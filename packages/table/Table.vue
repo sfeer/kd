@@ -1,6 +1,6 @@
 <template>
   <div class="kd-table">
-    <kd-search-form v-model='searchData' :model='config.search'></kd-search-form>
+    <kd-search-form v-model="searchData" :model="config.search"></kd-search-form>
     <div class="header">
       <div v-if="title" class="title">{{ title }}</div>
     </div>
@@ -27,7 +27,7 @@
   const props = defineProps({
     title: String,
     loadData: Function,
-    config: Object as PropType<TableConfig>,
+    config: { type: Object as PropType<TableConfig>, required: true },
   })
 
   const data = ref()

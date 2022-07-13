@@ -23,7 +23,7 @@
   import { FormItemModel } from './formTypes'
 
   const props = defineProps({
-    model: Object as PropType<FormItemModel>,
+    model: { type: Object as PropType<FormItemModel>, required: true},
     modelValue: null,
   })
 
