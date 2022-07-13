@@ -1,6 +1,6 @@
 <template>
   <div class="kd-table">
-    <kd-search-form v-model="searchData" :model="config.search"></kd-search-form>
+    <kd-search-form v-if="config.search" v-model="searchData" :model="config.search"></kd-search-form>
     <div class="header">
       <div v-if="title" class="title">{{ title }}</div>
     </div>

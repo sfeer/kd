@@ -30,7 +30,7 @@
   import { computed, PropType, ref } from 'vue'
   import { MenuItem } from './menuTypes'
 
-  const props = defineProps({ data: Array as PropType<MenuItem[]> })
+  const props = defineProps({ data: { type: Array as PropType<MenuItem[]>, required: true } })
   const emit = defineEmits(['click'])
   const activeSys = ref('')
   const modules = computed(() => props.data?.find(m => m.id === activeSys.value)?.child)
