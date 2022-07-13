@@ -1,0 +1,1 @@
+import{d as s,i as c,u as _,a as i,w as l,b as m,r as o,o as p,e as d}from"./index.70369b55.js";const C=s({__name:"Layout",setup(f){const t=c("menu"),n=_();function u(e){e.url&&n.push(e.url)}return(e,k)=>{const r=o("router-view"),a=o("kd-layout");return p(),i(a,{title:"XXXX\u5E73\u53F0",menu:m(t),onClickMenu:u},{default:l(()=>[d(r)]),_:1},8,["menu"])}}});export{C as default};
