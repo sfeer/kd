@@ -5,8 +5,7 @@ import Antd from 'ant-design-vue'
 import Kd from '../packages'
 import menu from './config/menu'
 import '../packages/style'
-import { generateRoutes } from '../packages/menu'
-import { camelCase, upperFirst } from 'lodash-es'
+import { generateRoutes } from '../packages'
 
 const app = createApp(App)
 
@@ -24,13 +23,7 @@ router.beforeEach((to, from, next) => {
     // 2 根据用户信息获取对应功能菜单
     app.provide('menu', menu)
 
-    const modules = import.meta.glob('/src/views/**/*.vue')
-    generateRoutes(menu).forEach(v => {
-      const tmp = v.path.split('/')
-      const file = upperFirst(camelCase(tmp.pop()))
-      v.component = modules[`/src/views${tmp.join('/')}/${file}.vue`]
-      router.addRoute('layout', v)
-    })
+    generateRoutes(menu, import.meta.glob('/src/views/**/*.vue')).forEach(v => router.addRoute('layout', v))
     next(to)
   } else if (to.path === '/login') {
     next({ path: '/', replace: true })

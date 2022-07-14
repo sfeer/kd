@@ -1,12 +1,29 @@
+@import (reference) '../../style/variables';
+
 .kd-table {
   .header {
+    display: flex;
+    align-items: center;
     margin-bottom: 15px;
 
     .title {
+      flex: auto;
       font-size: 1.2rem;
       font-weight: bold;
       line-height: 32px;
     }
+
+    .btn {
+      margin-left: 8px;
+    }
+  }
+
+  .info {
+    border-radius: 5px;
+    border: 1px solid @primary-2;
+    background-color: @primary-8;
+    padding: 5px 12px;
+    margin-bottom: 15px;
   }
 
   .ant-table {

@@ -3,7 +3,13 @@
     <kd-search-form v-if="config.search" v-model="searchData" :model="config.search"></kd-search-form>
     <div class="header">
       <div v-if="title" class="title">{{ title }}</div>
+      <a-button class="btn" v-for="(btn, i) in buttons" :key="i" :type="btn.type" @click="btn.click">
+        {{ btn.name }}
+      </a-button>
     </div>
+    <slot name="info">
+      <div v-if="info" class="info" v-html="info"></div>
+    </slot>
     <a-table
       :data-source="data"
       :row-key="config.rowKey"
@@ -22,12 +28,14 @@
 
 <script setup lang="ts">
   import { PropType, ref } from 'vue'
-  import { TableConfig } from './tableTypes'
+  import { TableButtonType, TableConfig } from './tableTypes'
 
   const props = defineProps({
     title: String,
     loadData: Function,
     config: { type: Object as PropType<TableConfig>, required: true },
+    buttons: Array as PropType<TableButtonType[]>,
+    info: String,
   })
 
   const data = ref()

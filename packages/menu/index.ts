@@ -3,6 +3,7 @@ import Menu from './Menu.vue'
 import './style'
 import { MenuItem } from './menuTypes'
 import type { RouteRecordRaw } from 'vue-router'
+import { camelCase, upperFirst } from 'lodash-es'
 
 export const MenuPlugin: Plugin = {
   install(app: App) {
@@ -10,15 +11,17 @@ export const MenuPlugin: Plugin = {
   },
 }
 
-export function generateRoutes(tree: MenuItem[]): RouteRecordRaw[] {
+export function generateRoutes(tree: MenuItem[], modules): RouteRecordRaw[] {
   const res: RouteRecordRaw[] = []
   tree.forEach(v => {
     if (v.child) {
-      res.push(...generateRoutes(v.child))
+      res.push(...generateRoutes(v.child, modules))
     } else if (v.url) {
+      const tmp = v.url.split('/')
+      const file = upperFirst(camelCase(tmp.pop()))
       res.push({
         path: v.url,
-        component: () => {},
+        component: modules[`/src/views${tmp.join('/')}/${file}.vue`],
         meta: { title: v.name },
       })
     }
