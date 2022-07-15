@@ -1,20 +1,21 @@
 <template>
   <a-form-item :label="model.name">
-    <a-input v-if="!model.type" v-model:value="vv" :placeholder="`请选择${model.name}`" v-bind="model.props"></a-input>
-    <a-input-number v-else-if="model.type === 'number'" v-model="vv" v-bind="model.props"></a-input-number>
+    <a-input v-if="!model.type" v-model:value="vv" :placeholder="`请选择${model.name}`" v-bind="model.props" />
+    <a-input-number v-else-if="model.type === 'number'" v-model="vv" v-bind="model.props" />
     <a-select
       v-else-if="model.type === 'select'"
       :placeholder="`请选择${model.name}`"
       v-model="vv"
       :options="model.data?.map(x => ({ value: x.id, label: x.name }))"
-    ></a-select>
+    />
     <a-date-picker
       v-else-if="model.type === 'date'"
       :valueFormat="model.format"
       style="width: 100%"
       :placeholder="`请选择${model.name}`"
       v-model="vv"
-    ></a-date-picker>
+    />
+    <a-textarea v-else-if="model.type === 'textarea'" :auto-size="{ minRows: 2 }" />
   </a-form-item>
 </template>
 
@@ -23,7 +24,7 @@
   import { FormItemModel } from './formTypes'
 
   const props = defineProps({
-    model: { type: Object as PropType<FormItemModel>, required: true},
+    model: { type: Object as PropType<FormItemModel>, required: true },
     modelValue: null,
   })
 
