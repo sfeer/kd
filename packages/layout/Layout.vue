@@ -39,15 +39,15 @@
     const color = Color(v)
     dynamicTheme({
       '--kd-primary-color': v,
-      '--kd-primary-1': color.fade(0.1).hexa(),
-      '--kd-primary-2': color.fade(0.2).hexa(),
-      '--kd-primary-3': color.fade(0.3).hexa(),
-      '--kd-primary-4': color.fade(0.4).hexa(),
+      '--kd-primary-1': color.fade(0.9).hexa(),
+      '--kd-primary-2': color.fade(0.8).hexa(),
+      '--kd-primary-3': color.fade(0.7).hexa(),
+      '--kd-primary-4': color.fade(0.6).hexa(),
       '--kd-primary-5': color.fade(0.5).hexa(),
-      '--kd-primary-6': color.fade(0.6).hexa(),
-      '--kd-primary-7': color.fade(0.7).hexa(),
-      '--kd-primary-8': color.fade(0.8).hexa(),
-      '--kd-primary-9': color.fade(0.9).hexa(),
+      '--kd-primary-6': color.fade(0.4).hexa(),
+      '--kd-primary-7': color.fade(0.3).hexa(),
+      '--kd-primary-8': color.fade(0.2).hexa(),
+      '--kd-primary-9': color.fade(0.1).hexa(),
       '--kd-primary-color-hover': color.lighten(0.3).hex(),
       '--kd-primary-color-active': color.darken(0.3).hex(),
 

@@ -1,5 +1,5 @@
 <template>
-  <kd-search-form v-model="formData" :model="appSearchModel"></kd-search-form>
+  <kd-search-form v-model="formData" :model="appSearchModel"/>
 </template>
 
 <script setup lang="ts">

@@ -36,6 +36,11 @@ export const userModel = [
   { id: 'attach', name: '附件' },
 ]
 
+export const deptModel = [
+  { id: 'name', name: '部门名称' },
+  { id: 'sort', name: '排序号' },
+]
+
 export const appSearchModel = [
   { id: 'name', name: '应用名称' },
   { id: 'startTime', name: '开始时间' },

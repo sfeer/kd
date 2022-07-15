@@ -12,11 +12,9 @@
         </div>
       </a-row>
     </template>
-    <a-row v-else>
-      <a-col v-for="(v, k) in map" :span="6" :key="k">
-        <kd-form-item v-model="vv[k]" :model="v"></kd-form-item>
-      </a-col>
-    </a-row>
+    <template v-else>
+      <kd-form-item v-for="(v, k) in map" :key="k" v-model="vv[k]" :model="v"></kd-form-item>
+    </template>
   </a-form>
 </template>
 

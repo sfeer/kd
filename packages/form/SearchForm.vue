@@ -1,6 +1,6 @@
 <template>
   <div class="kd-search-form" :class="{ collapsed }">
-    <kd-form v-model="vv" :model="mm"></kd-form>
+    <kd-form v-model="vv" :model="model" :layout="ll" />
     <div class="btns">
       <a-button @click="handleReset">重置</a-button>
       <a-button type="primary" html-type="submit" @click="handleSearch">查询</a-button>
@@ -12,10 +12,12 @@
 <script setup lang="ts">
   import { computed, PropType, ref } from 'vue'
   import { FormItemModel } from './formTypes'
+  import { chunk } from 'lodash-es'
 
   const props = defineProps({
     model: { type: Array as PropType<FormItemModel[]>, required: true },
     modelValue: { type: Object, default: {} },
+    size: { type: Number, default: 4 },
   })
   const emit = defineEmits(['update:modelValue', 'search'])
   const collapsed = ref(true)
@@ -30,8 +32,13 @@
   })
 
   const hasMore = computed(() => props.model.length > 3)
-
-  const mm = computed(() => (collapsed.value ? props.model.slice(0, 3) : props.model))
+  const ll = computed(() => {
+    const model = collapsed.value ? props.model.slice(0, 3) : props.model
+    const keys = model.map(v => v.id)
+    const vv = keys.length % props.size
+    keys.push(...Array(props.size - (vv === 0 ? props.size : vv)))
+    return chunk(keys, props.size)
+  })
 
   // 搜索条件展开/收起
   function changeCollapsed() {
