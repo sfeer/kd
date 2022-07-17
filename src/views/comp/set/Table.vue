@@ -15,7 +15,7 @@
   import { ref } from 'vue'
 
   const buttons = ref([{ name: '删除', type: 'danger' }, { name: '升级', type: 'primary' }, { name: '归档' }])
-  const infoHtml = ref('A类<b>2</b>个，B类<b>1</b>个')
+  const infoHtml = ref('A类2个，B类1个')
 
   function loadData(search, pagination) {
     const data = [

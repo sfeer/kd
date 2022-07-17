@@ -1,6 +1,6 @@
 {
   "name": "@sfeer/kd",
-  "version": "0.5.5",
+  "version": "0.5.6",
   "description": "看到，基于ant-design-vue的二次封装",
   "scripts": {
     "dev": "vite --config ./build/base.config.ts",
@@ -38,6 +38,7 @@
     "ant-design-vue": "3",
     "axios": "0",
     "color": "4",
+    "echarts": "5",
     "vue": "3",
     "vue-router": "4",
     "vue3-colorpicker": "2"

@@ -8,7 +8,7 @@
       </a-button>
     </div>
     <slot name="info">
-      <div v-if="info" class="info" v-html="info"></div>
+      <div v-if="info" class="info">{{info}}</div>
     </slot>
     <a-table
       :data-source="data"

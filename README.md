@@ -20,7 +20,7 @@
 
 ```
 // yarn安装
-corepack prepare yarn @x.y.z --activate
+corepack prepare yarn@1.22.19 --activate
 // npm发布
 npm publish --registry https://registry.npmjs.org/
 ```

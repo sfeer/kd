@@ -93,6 +93,15 @@ export default [
           { id: '234', name: '颜色选择框', url: '/comp/form/color-picker' },
         ],
       },
+      {
+        id: '24',
+        name: '图表',
+        icon: 'news',
+        child: [
+          { id: '241', name: '趋势图', url: '/comp/chart/line' },
+          { id: '242', name: '时序图', url: '/comp/chart/time' },
+        ],
+      },
     ],
   },
   { id: '3', name: '场景', icon: 'setting' },
