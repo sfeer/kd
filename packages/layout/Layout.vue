@@ -22,7 +22,7 @@
 
 <script setup lang="ts">
   import { Switch as ASwitch } from 'ant-design-vue'
-  import { PropType, ref, watch } from 'vue'
+  import { PropType, provide, ref, watch } from 'vue'
   import { changeTheme, dynamicTheme } from '../style'
   import Color from 'color'
   import { MenuItem } from '../menu/menuTypes'
@@ -34,7 +34,9 @@
   const theme = ref<string>('default')
   const color = ref<string>('#005ca7')
 
+  provide('theme', theme)
   watch(theme, v => changeTheme(v))
+
   watch(color, v => {
     const color = Color(v)
     dynamicTheme({
@@ -54,7 +56,7 @@
       '--ant-primary-color': v,
       '--ant-primary-color-hover': color.lighten(0.3).hex(),
       '--ant-primary-color-active': color.darken(0.3).hex(),
-      '--ant-primary-color-active-deprecated-d-02':color.lighten(0.7).hex(),
+      '--ant-primary-color-active-deprecated-d-02': color.lighten(0.7).hex(),
       '--ant-primary-1': color.lighten(0.9).hex(),
       '--ant-primary-9': color.darken(0.9).hex(),
     })
