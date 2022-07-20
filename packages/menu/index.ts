@@ -14,9 +14,9 @@ export const MenuPlugin: Plugin = {
 export function generateRoutes(tree: MenuItem[], modules): RouteRecordRaw[] {
   const res: RouteRecordRaw[] = []
   tree.forEach(v => {
-    if (v.child) {
-      res.push(...generateRoutes(v.child, modules))
-    } else if (v.url) {
+    v.child && res.push(...generateRoutes(v.child, modules))
+
+    if (v.url) {
       const tmp = v.url.split('/')
       const file = upperFirst(camelCase(tmp.pop()))
       res.push({
