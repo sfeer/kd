@@ -27,7 +27,7 @@ export const userModel = [
   { id: 'birthArea', name: '籍贯' },
   { id: 'educationCode', name: '学历' },
   { id: 'politicCode', name: '政治面貌' },
-  { id: 'sort', name: '排序号' },
+  { id: 'sort', name: '排序号', type: 'text' },
   { id: 'cerType', name: '证件类型' },
   { id: 'cerNumber', name: '证件号码' },
   { id: 'photo', name: '头像' },

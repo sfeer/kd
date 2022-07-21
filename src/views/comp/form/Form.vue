@@ -21,7 +21,7 @@
     birthArea: '',
     educationCode: '',
     politicCode: '',
-    sort: '',
+    sort: '34',
     cerType: '',
     cerNumber: '',
     photo: '',
