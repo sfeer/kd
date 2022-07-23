@@ -1,6 +1,7 @@
 import { App, Plugin } from 'vue'
 import { ChartPlugin } from './Chart'
 import { ColorPickerPlugin } from './color-picker'
+import { CropperPlugin } from './cropper'
 import { FormPlugin } from './form'
 import { IconPlugin } from './icon'
 import { ImagePlugin } from './image'
@@ -13,6 +14,7 @@ const KdPlugin: Plugin = {
   install(app: App) {
     ChartPlugin.install?.(app)
     ColorPickerPlugin.install?.(app)
+    CropperPlugin.install?.(app)
     FormPlugin.install?.(app)
     IconPlugin.install?.(app)
     ImagePlugin.install?.(app)

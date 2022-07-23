@@ -70,7 +70,10 @@ export default [
         id: '21',
         name: '通用',
         icon: 'news',
-        child: [{ id: '211', name: '按钮', url: '/comp/common/btn' }],
+        child: [
+          { id: '211', name: '按钮', url: '/comp/common/btn' },
+          { id: '212', name: '图片裁剪', url: '/comp/common/cropper' },
+        ],
       },
       {
         id: '22',
